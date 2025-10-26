@@ -67,9 +67,9 @@ class CustomNavbar extends HTMLElement {
         const styles = `
             <style>
                 .navbar {
-                    background: rgba(255, 255, 255, 0.95);
+                    background: rgba(255, 255, 255, 0.98);
                     backdrop-filter: blur(20px);
-                    padding: 1rem 2rem;
+                    padding: 1rem 1.5rem;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
@@ -86,7 +86,7 @@ class CustomNavbar extends HTMLElement {
                 .logo {
                     color: #001F3F;
                     font-weight: 700;
-                    font-size: 1.5rem;
+                    font-size: 1.25rem;
                     display: flex;
                     align-items: center;
                     text-decoration: none;
@@ -194,6 +194,12 @@ class CustomNavbar extends HTMLElement {
                     cursor: pointer;
                     padding: 0.5rem;
                     z-index: 1001;
+                    border-radius: 8px;
+                    transition: all 0.3s ease;
+                }
+                
+                .mobile-menu:hover {
+                    background: rgba(0, 31, 63, 0.05);
                 }
                 
                 .mobile-menu-icon {
@@ -206,14 +212,20 @@ class CustomNavbar extends HTMLElement {
                     height: 80px;
                 }
                 
-                /* Mobile optimization */
+                /* === MOBILE STYLES - IMPROVED === */
                 @media (max-width: 768px) {
                     .navbar {
-                        padding: 1rem 1.5rem;
+                        padding: 1rem 1.25rem;
                     }
                     
                     .mobile-menu {
-                        display: block;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    
+                    .logo {
+                        font-size: 1.1rem;
                     }
                     
                     .logo-video {
@@ -230,40 +242,112 @@ class CustomNavbar extends HTMLElement {
                         background: rgba(255, 255, 255, 0.98);
                         backdrop-filter: blur(20px);
                         flex-direction: column;
-                        justify-content: center;
-                        padding: 2rem;
+                        justify-content: flex-start;
+                        padding-top: 100px;
+                        padding-left: 2rem;
+                        padding-right: 2rem;
                         box-shadow: 0 4px 30px rgba(0, 31, 63, 0.1);
                         display: none;
                         gap: 0;
                         z-index: 999;
+                        overflow-y: auto;
                     }
                     
                     .nav-links.active {
                         display: flex;
+                        animation: slideIn 0.3s ease-out;
+                    }
+                    
+                    @keyframes slideIn {
+                        from {
+                            opacity: 0;
+                            transform: translateY(-20px);
+                        }
+                        to {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
                     }
                     
                     .nav-link {
-                        padding: 1.5rem;
+                        padding: 1.25rem 0;
                         width: 100%;
-                        justify-content: center;
-                        border-bottom: 1px solid rgba(0, 31, 63, 0.05);
+                        justify-content: flex-start;
+                        border-bottom: 1px solid rgba(0, 31, 63, 0.08);
                         font-size: 1.1rem;
+                        font-weight: 500;
                     }
                     
                     .nav-link:last-child {
                         border-bottom: none;
                     }
                     
+                    .nav-icon {
+                        width: 20px;
+                        height: 20px;
+                        margin-right: 0.75rem;
+                    }
+                    
                     .cta-button {
                         margin-top: 1rem;
                         text-align: center;
-                        padding: 1rem 2rem;
+                        padding: 1rem 1.5rem;
+                        font-size: 1rem;
+                        border-radius: 10px;
+                        justify-content: center;
+                        background: linear-gradient(135deg, #001F3F, #002E5D);
+                    }
+                    
+                    .cta-button:hover {
+                        transform: translateY(-1px);
+                    }
+                    
+                    /* Close button styling */
+                    .mobile-menu.active .mobile-menu-icon {
+                        transform: rotate(90deg);
                     }
                 }
                 
+                /* Desktop styles */
                 @media (min-width: 769px) {
                     .nav-links {
                         display: flex !important;
+                    }
+                    
+                    .navbar {
+                        padding: 1rem 2rem;
+                    }
+                    
+                    .logo {
+                        font-size: 1.5rem;
+                    }
+                }
+                
+                /* Extra small devices */
+                @media (max-width: 480px) {
+                    .navbar {
+                        padding: 0.875rem 1rem;
+                    }
+                    
+                    .logo {
+                        font-size: 1rem;
+                    }
+                    
+                    .logo-video {
+                        width: 24px;
+                        height: 24px;
+                        margin-right: 0.5rem;
+                    }
+                    
+                    .nav-links {
+                        padding-top: 80px;
+                        padding-left: 1.5rem;
+                        padding-right: 1.5rem;
+                    }
+                    
+                    .nav-link {
+                        padding: 1rem 0;
+                        font-size: 1rem;
                     }
                 }
             </style>
@@ -278,7 +362,10 @@ class CustomNavbar extends HTMLElement {
         
         if (mobileMenu && navLinks) {
             // Mobile menu toggle
-            mobileMenu.addEventListener('click', () => this.toggleMobileMenu());
+            mobileMenu.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.toggleMobileMenu();
+            });
             
             // Close mobile menu when clicking on links
             navLinks.querySelectorAll('.nav-link').forEach(link => {
@@ -306,9 +393,6 @@ class CustomNavbar extends HTMLElement {
     }
 
     toggleMobileMenu() {
-        const navLinks = this.querySelector('#navLinks');
-        const mobileMenuIcon = this.querySelector('.mobile-menu-icon');
-        
         if (this.isMobileMenuOpen) {
             this.closeMobileMenu();
         } else {
@@ -319,8 +403,10 @@ class CustomNavbar extends HTMLElement {
     openMobileMenu() {
         const navLinks = this.querySelector('#navLinks');
         const mobileMenuIcon = this.querySelector('.mobile-menu-icon');
+        const mobileMenu = this.querySelector('#mobileMenu');
         
         navLinks.classList.add('active');
+        mobileMenu.classList.add('active');
         mobileMenuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>';
         this.isMobileMenuOpen = true;
         document.body.style.overflow = 'hidden';
@@ -329,8 +415,10 @@ class CustomNavbar extends HTMLElement {
     closeMobileMenu() {
         const navLinks = this.querySelector('#navLinks');
         const mobileMenuIcon = this.querySelector('.mobile-menu-icon');
+        const mobileMenu = this.querySelector('#mobileMenu');
         
         navLinks.classList.remove('active');
+        mobileMenu.classList.remove('active');
         mobileMenuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>';
         this.isMobileMenuOpen = false;
         document.body.style.overflow = '';
