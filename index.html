@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safina MIS - The Ark for Your Hotel Operations</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/safina_logo.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#001F3F',
+                        gold: '#FFD700',
+                        'navy-light': '#002E5D',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 font-sans">
+    <custom-navbar></custom-navbar>
+    
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-r from-navy to-navy-light text-white py-24 overflow-hidden">
+        <div class="absolute inset-0 bg-navy opacity-90 z-0"></div>
+        
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 hero-title">The Ark for Your Business Operations</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto hero-subtitle">Stop losing sleep over manual errors and chaotic front desks. Safina MIS brings order, clarity, and freedom to hotel managers.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#demo" class="bg-gold text-navy px-8 py-4 rounded-lg font-bold hover:bg-yellow-400 transition transform hover:scale-105 shadow-lg">Try Live Demo</a>
+                <a href="#health-check" class="bg-transparent border-2 border-gold text-gold px-8 py-4 rounded-lg font-bold hover:bg-gold hover:text-navy transition">Free Health Check</a>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-16 bg-white transform skew-y-2 origin-bottom"></div>
+    </section>
+
+    <!-- Pain Points Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-4 text-navy">Tired of Feeling Like You're Losing Control?</h2>
+            <p class="text-gray-600 text-center mb-16 max-w-2xl mx-auto">You're not alone. These are the exact challenges we built Safina MIS to solve.</p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-elegant p-8">
+                    <div class="bg-navy text-gold w-14 h-14 rounded-full flex items-center justify-center mb-6 shadow-md">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-navy">Chaotic Front Desk</h3>
+                    <p class="text-gray-600">Paper receipts everywhere, manual guest books, and a reception that looks more like a storage room than a professional hotel entrance.</p>
+                </div>
+                <div class="card-elegant p-8">
+                    <div class="bg-navy text-gold w-14 h-14 rounded-full flex items-center justify-center mb-6 shadow-md">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-navy">Revenue Leaks</h3>
+                    <p class="text-gray-600">That sinking feeling when you suspect under-reported sales or "lost" transactions, but can't prove it without offending your staff.</p>
+                </div>
+                <div class="card-elegant p-8">
+                    <div class="bg-navy text-gold w-14 h-14 rounded-full flex items-center justify-center mb-6 shadow-md">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-navy">Blind Decisions</h3>
+                    <p class="text-gray-600">Making critical business choices without real-time data or accurate reports.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Impact Section - UPDATED -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-4 text-navy">Transforming Accommodation Across Kenya</h2>
+            <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">From guesthouses to hotels, B&Bs to lodges - bringing modern management to every type of accommodation</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                <!-- Guesthouse -->
+                <div class="bg-white rounded-xl p-6 text-center shadow-md border border-gold-light">
+                    <div class="bg-gold text-navy w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-navy mb-2">Guesthouses</h4>
+                    <p class="text-gray-600 text-sm">Family-run establishments</p>
+                </div>
+
+                <!-- Hotels -->
+                <div class="bg-white rounded-xl p-6 text-center shadow-md border border-gold-light">
+                    <div class="bg-gold text-navy w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-navy mb-2">Hotels</h4>
+                    <p class="text-gray-600 text-sm">All star ratings</p>
+                </div>
+
+                <!-- B&Bs -->
+                <div class="bg-white rounded-xl p-6 text-center shadow-md border border-gold-light">
+                    <div class="bg-gold text-navy w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9m0 9c-5 0-9-4-9-9s4-9 9-9"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-navy mb-2">B&Bs</h4>
+                    <p class="text-gray-600 text-sm">Bed & Breakfasts</p>
+                </div>
+
+                <!-- Lodges -->
+                <div class="bg-white rounded-xl p-6 text-center shadow-md border border-gold-light">
+                    <div class="bg-gold text-navy w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-bold text-navy mb-2">Lodges</h4>
+                    <p class="text-gray-600 text-sm">Vacation & Safari</p>
+                </div>
+            </div>
+
+            <!-- Supporting Text -->
+            <div class="mt-12 text-center max-w-3xl mx-auto">
+                <p class="text-gray-600 italic border-l-4 border-gold pl-4 py-2 bg-white rounded-r-lg">
+                    "Safina MIS focuses on what matters most: <span class="font-semibold text-navy">managing your accommodation business with integrity and efficiency</span>. 
+                    No unnecessary features, just pure accommodation management excellence."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto card-elegant overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-gradient-to-br from-navy to-navy-light p-10 text-white">
+                        <h2 class="text-3xl font-bold mb-6">See Safina MIS in Action</h2>
+                        <p class="mb-8 text-gray-200">Experience how our system can transform your hotel operations with this interactive demo.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 mr-3 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/>
+                                </svg>
+                                <span class="font-medium">safina.kweliai.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 mr-3 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                                </svg>
+                                <span class="font-medium">Username: Demo</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 mr-3 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                                </svg>
+                                <span class="font-medium">Password: Demo@123</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-10">
+                        <h3 class="text-2xl font-bold mb-6 text-navy">What You'll Discover</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-green-500 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                <span>Seamless front desk operations</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-green-500 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                <span>Automated billing and reporting</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-green-500 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                <span>Real-time inventory tracking</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-green-500 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                <span>Comprehensive business insights</span>
+                            </li>
+                        </ul>
+                        <a href="http://safina.kweliai.com" target="_blank" class="btn-gold mt-8 inline-block px-8 py-3 rounded-lg font-bold">Launch Demo Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Health Check CTA - WITH PROGRESS BAR -->
+    <section id="health-check" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4 text-navy">Free Accommodation Operations Assessment</h2>
+            <p class="text-xl mb-10 max-w-2xl mx-auto text-gray-600">Get our expert analysis of your current systems and receive personalized recommendations to boost efficiency</p>
+            <div class="max-w-md mx-auto card-elegant p-8">
+                <form 
+                    action="https://formspree.io/f/xrbobgaj" 
+                    method="POST"
+                    class="space-y-4"
+                    id="health-check-form"
+                >
+                    <input 
+                        type="text" 
+                        name="name" 
+                        placeholder="Your Name" 
+                        class="input-elegant w-full" 
+                        required
+                        id="name-input"
+                    >
+                    <input 
+                        type="email" 
+                        name="email" 
+                        placeholder="Email Address" 
+                        class="input-elegant w-full" 
+                        required
+                        id="email-input"
+                    >
+                    <input 
+                        type="tel" 
+                        name="phone" 
+                        placeholder="Phone Number" 
+                        class="input-elegant w-full"
+                        id="phone-input"
+                    >
+                    <input 
+                        type="hidden" 
+                        name="_subject" 
+                        value="New Health Check Request - Safina MIS"
+                    >
+                    
+                    <!-- Progress Bar Container -->
+                    <div class="progress-container hidden mt-2">
+                        <div class="bg-gray-200 rounded-full h-2">
+                            <div class="bg-gold h-2 rounded-full progress-bar" style="width: 0%"></div>
+                        </div>
+                        <p class="text-xs text-gray-600 mt-1 progress-text">Sending your request...</p>
+                    </div>
+                    
+                    <button 
+                        type="submit" 
+                        class="btn-navy w-full px-6 py-3 rounded-lg font-bold transition-all duration-300 relative overflow-hidden"
+                        id="submit-button"
+                    >
+                        <span class="button-text">Get My Free Assessment</span>
+                        <div class="loading-spinner absolute inset-0 flex items-center justify-center hidden">
+                            <svg class="animate-spin h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                        </div>
+                    </button>
+                </form>
+                <p class="text-gray-500 text-sm mt-4">No obligation • 100% Free • Personalized Report</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-4 text-navy">Hotel Managers Who Found Peace</h2>
+            <p class="text-gray-600 text-center mb-16 max-w-2xl mx-auto">Hear from hotel owners who transformed their operations with Safina MIS</p>
+            
+            <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                <!-- Kakamega Guest House -->
+                <div class="testimonial-card p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-navy rounded-full flex items-center justify-center text-gold mr-4 shadow-md">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-navy">Mr. Julius</h4>
+                            <p class="text-gold font-semibold">Kakamega Guest House</p>
+                            <p class="text-gray-500 text-sm">Kakamega, Kenya</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic border-l-4 border-gold pl-4 py-2">
+                        "I was managing in the dark - there were rooms I didn't even know existed in my own business! The constant worry about manual errors and staff trust was exhausting. 
+                        <span class="font-semibold text-navy">Safina MIS gave me complete visibility and control</span>. Now automatic check-ins, instant digital receipts, and integrated payment tracking run smoothly. 
+                        I finally have the peace of mind that comes from knowing every aspect of my business is secure and optimized for growth."
+                    </p>
+                    <div class="mt-4 flex items-center text-sm text-gold">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <span>Verified Client - 89% reduction in billing errors</span>
+                    </div>
+                </div>
+
+                <!-- Fountain Brooke Gardens -->
+                <div class="testimonial-card p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-navy rounded-full flex items-center justify-center text-gold mr-4 shadow-md">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-navy">Manager Evans</h4>
+                            <p class="text-gold font-semibold">Fountain Brooke Gardens</p>
+                            <p class="text-gray-500 text-sm">Thika, Kiambu Kenya</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic border-l-4 border-gold pl-4 py-2">
+                        "We implemented Safina MIS while still completing our rooms section, and the results were immediate. 
+                        <span class="font-semibold text-navy">Our booking efficiency increased by 60% in the first month</span>, and we're now reaching clients we never could before. 
+                        The automated marketing features filled our soft opening completely. What used to take hours of manual tracking now happens automatically - this is the modern solution that's transforming Kenyan hospitality."
+                    </p>
+                    <div class="mt-4 flex items-center text-sm text-gold">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                        </svg>
+                        <span>60% booking increase in first month</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="mt-16 bg-gradient-to-r from-navy to-navy-light rounded-2xl p-8 text-white text-center">
+                <h3 class="text-2xl font-bold mb-6">Real Results for Kenyan Hotels</h3>
+                <div class="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-gold mb-2">89%</div>
+                        <p class="text-gray-200 text-sm">Reduction in billing errors</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-gold mb-2">60%</div>
+                        <p class="text-gray-200 text-sm">Faster booking processing</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-gold mb-2">24/7</div>
+                        <p class="text-gray-200 text-sm">Business visibility & control</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-gold mb-2">100%</div>
+                        <p class="text-gray-200 text-sm">Payment tracking accuracy</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trust Indicators -->
+            <div class="mt-16 text-center">
+                <div class="grid md:grid-cols-4 gap-8 max-w-3xl mx-auto">
+                    <div class="text-center">
+                        <div class="bg-gold text-navy w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 shadow-md">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-navy">Complete Control</h4>
+                        <p class="text-gray-600 text-sm">Know every transaction in real-time</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-gold text-navy w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 shadow-md">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-navy">Maximize Revenue</h4>
+                        <p class="text-gray-600 text-sm">Optimize every business opportunity</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-gold text-navy w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 shadow-md">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-navy">Automate Operations</h4>
+                        <p class="text-gray-600 text-sm">From check-ins to receipt generation</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-gold text-navy w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 shadow-md">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-bold text-navy">Total Visibility</h4>
+                        <p class="text-gray-600 text-sm">See your entire business at a glance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-20 bg-gradient-to-r from-navy to-navy-light text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Transform Your Hotel?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Stop losing money to manual errors and start enjoying the freedom of automated, accurate operations.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#demo" class="btn-gold px-8 py-4 rounded-lg font-bold">Try Demo Now</a>
+                <a href="#health-check" class="bg-transparent border-2 border-gold text-gold px-8 py-4 rounded-lg font-bold hover:bg-gold hover:text-navy transition">Get Free Assessment</a>
+            </div>
+        </div>
+    </section>
+
+    <custom-footer></custom-footer>
+    
+    <!-- Scripts -->
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

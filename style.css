@@ -1,0 +1,403 @@
+/* ===== ELEGANT TYPOGRAPHY ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* ===== SMOOTH INTERACTIONS ===== */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+/* ===== PREMIUM TEXT SHINE ANIMATION ===== */
+@keyframes sleekShine {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    background: linear-gradient(
+        90deg,
+        #001F3F 0%,
+        #FFFFFF 25%,
+        #FFD700 50%,
+        #FFFFFF 75%,
+        #001F3F 100%
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: sleekShine 6s ease-in-out infinite;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    color: #E2E8F0;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    font-weight: 300;
+}
+
+/* ===== ELEVATED SHADOWS ===== */
+.shadow-sm {
+    box-shadow: 0 4px 20px rgba(0, 31, 63, 0.08);
+}
+
+.shadow-md {
+    box-shadow: 0 8px 40px rgba(0, 31, 63, 0.12);
+}
+
+.shadow-lg {
+    box-shadow: 0 15px 60px rgba(0, 31, 63, 0.15);
+}
+
+/* ===== SOPHISTICATED CARD STYLES ===== */
+.card-elegant {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 40px rgba(0, 31, 63, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.card-elegant:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 31, 63, 0.15);
+    border-color: rgba(255, 215, 0, 0.3);
+}
+
+/* ===== GOLD ACCENT BORDERS ===== */
+.border-gold {
+    border-color: #FFD700;
+}
+
+.border-gold-light {
+    border-color: rgba(255, 215, 0, 0.3);
+}
+
+/* ===== ELEGANT BUTTONS ===== */
+.btn-gold {
+    background: linear-gradient(135deg, #FFD700, #FFC400);
+    color: #001F3F;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4);
+    background: linear-gradient(135deg, #FFC400, #FFB300);
+    color: #001F3F;
+    text-decoration: none;
+}
+
+.btn-navy {
+    background: linear-gradient(135deg, #001F3F, #002E5D);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    box-shadow: 0 4px 20px rgba(0, 31, 63, 0.3);
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-navy:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 31, 63, 0.4);
+    background: linear-gradient(135deg, #002E5D, #003D7A);
+    color: white;
+    text-decoration: none;
+}
+
+/* ===== HERO SECTION ENHANCEMENTS ===== */
+.hero-skew {
+    transform: skewY(-2deg);
+    transform-origin: bottom;
+}
+
+.hero-content {
+    transform: skewY(2deg);
+}
+
+/* ===== SVG ICON REFINEMENT ===== */
+.icon-gold {
+    color: #FFD700;
+    stroke: #FFD700;
+}
+
+.icon-navy {
+    color: #001F3F;
+    stroke: #001F3F;
+}
+
+/* Ensure consistent SVG sizing */
+svg {
+    vertical-align: middle;
+}
+
+/* ===== ELEGANT GRADIENTS ===== */
+.gradient-navy {
+    background: linear-gradient(135deg, #001F3F 0%, #002E5D 50%, #001F3F 100%);
+}
+
+.gradient-gold {
+    background: linear-gradient(135deg, #FFD700 0%, #FFC400 50%, #FFD700 100%);
+}
+
+/* ===== CUSTOM ANIMATIONS ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* ===== FORM ELEGANCE ===== */
+.input-elegant {
+    border: 2px solid #E5E7EB;
+    border-radius: 12px;
+    padding: 16px 20px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: white;
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+}
+
+.input-elegant:focus {
+    border-color: #FFD700;
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+    outline: none;
+    transform: translateY(-2px);
+}
+
+/* ===== TESTIMONIAL REFINEMENT ===== */
+.testimonial-card {
+    background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 100%);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 20px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(0, 31, 63, 0.1);
+}
+
+.testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #FFD700, #001F3F);
+    border-radius: 20px 20px 0 0;
+}
+
+/* ===== NAVY/GOLD COLOR UTILITIES ===== */
+.text-navy {
+    color: #001F3F;
+}
+
+.text-gold {
+    color: #FFD700;
+}
+
+.bg-navy {
+    background-color: #001F3F;
+}
+
+.bg-gold {
+    background-color: #FFD700;
+}
+
+.border-navy {
+    border-color: #001F3F;
+}
+
+/* ===== RESPONSIVE REFINEMENTS ===== */
+@media (max-width: 768px) {
+    .card-elegant:hover {
+        transform: translateY(-4px);
+    }
+    
+    .btn-gold:hover,
+    .btn-navy:hover {
+        transform: translateY(-1px);
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+    
+    .testimonial-card:hover {
+        transform: translateY(-2px);
+    }
+    
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* ===== CUSTOM SCROLLBAR ===== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #FFD700, #001F3F);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #001F3F, #FFD700);
+}
+
+/* ===== ACCESSIBILITY & FOCUS STATES ===== */
+a:focus,
+button:focus {
+    outline: 2px solid #FFD700;
+    outline-offset: 2px;
+}
+
+/* ===== LOADING STATES ===== */
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    .btn-gold,
+    .btn-navy {
+        background: #001F3F !important;
+        color: white !important;
+        box-shadow: none !important;
+    }
+}
+
+/* ===== UTILITY CLASSES ===== */
+.text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.backdrop-blur {
+    backdrop-filter: blur(10px);
+}
+
+/* ===== FORM VALIDATION STYLES ===== */
+.input-elegant:invalid {
+    border-color: #EF4444;
+}
+
+.input-elegant:valid {
+    border-color: #10B981;
+}
+
+/* ===== SMOOTH TRANSITIONS FOR ALL INTERACTIVE ELEMENTS ===== */
+a, button, .card-elegant, .btn-gold, .btn-navy, .input-elegant {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== CONTAINER CONSISTENCY ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===== PROGRESS BAR STYLES ===== */
+.progress-container {
+    transition: all 0.3s ease;
+}
+
+.progress-bar {
+    transition: width 0.4s ease;
+    background: linear-gradient(90deg, #FFD700, #FFC400);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.loading-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Button loading state */
+.btn-navy:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+
+/* Success state */
+.btn-success {
+    background: linear-gradient(135deg, #10B981, #059669) !important;
+    color: white !important;
+}
+
+/* Progress states */
+.progress-25 { width: 25% !important; }
+.progress-50 { width: 50% !important; }
+.progress-75 { width: 75% !important; }
+.progress-100 { width: 100% !important; }
