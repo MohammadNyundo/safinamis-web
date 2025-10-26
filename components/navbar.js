@@ -412,6 +412,7 @@ class CustomNavbar extends HTMLElement {
         mobileMenuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>';
         this.isMobileMenuOpen = true;
         document.body.style.overflow = 'hidden';
+        document.body.classList.add('navbar-menu-open'); // ADD THIS LINE
     }
 
     closeMobileMenu() {
@@ -424,6 +425,7 @@ class CustomNavbar extends HTMLElement {
         mobileMenuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>';
         this.isMobileMenuOpen = false;
         document.body.style.overflow = '';
+        document.body.classList.remove('navbar-menu-open'); // ADD THIS LINE
     }
 
     // Cleanup when component is removed
