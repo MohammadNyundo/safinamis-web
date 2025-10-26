@@ -427,5 +427,20 @@
     <script src="js/script.js"></script>
     <script src="components/navbar.js"></script>
     <script src="components/footer.js"></script>
+    <script>
+        setTimeout(() => {
+            const mobileBtn = document.querySelector('#mobileMenu');
+            const navLinks = document.querySelector('#navLinks');
+            console.log('Mobile button exists:', !!mobileBtn);
+            console.log('Nav links exists:', !!navLinks);
+            
+            if (mobileBtn) {
+                mobileBtn.addEventListener('click', () => {
+                    console.log('Mobile menu clicked!');
+                });
+            }
+        }, 1000);
+    </script>
+
 </body>
 </html>
