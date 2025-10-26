@@ -212,7 +212,7 @@ class CustomNavbar extends HTMLElement {
                     height: 80px;
                 }
                 
-                /* === MOBILE STYLES - IMPROVED === */
+                /* === MOBILE STYLES - FIXED === */
                 @media (max-width: 768px) {
                     .navbar {
                         padding: 1rem 1.25rem;
@@ -235,7 +235,7 @@ class CustomNavbar extends HTMLElement {
                     
                     .nav-links {
                         position: fixed;
-                        top: 0;
+                        top: 70px; /* CHANGED: Start below navbar */
                         left: 0;
                         right: 0;
                         bottom: 0;
@@ -243,7 +243,7 @@ class CustomNavbar extends HTMLElement {
                         backdrop-filter: blur(20px);
                         flex-direction: column;
                         justify-content: flex-start;
-                        padding-top: 100px;
+                        padding-top: 2rem; /* CHANGED: Reduced padding */
                         padding-left: 2rem;
                         padding-right: 2rem;
                         box-shadow: 0 4px 30px rgba(0, 31, 63, 0.1);
@@ -251,6 +251,7 @@ class CustomNavbar extends HTMLElement {
                         gap: 0;
                         z-index: 999;
                         overflow-y: auto;
+                        border-top: 1px solid rgba(255, 215, 0, 0.1); /* ADDED: Visual separation */
                     }
                     
                     .nav-links.active {
@@ -261,7 +262,7 @@ class CustomNavbar extends HTMLElement {
                     @keyframes slideIn {
                         from {
                             opacity: 0;
-                            transform: translateY(-20px);
+                            transform: translateY(-10px);
                         }
                         to {
                             opacity: 1;
@@ -340,7 +341,8 @@ class CustomNavbar extends HTMLElement {
                     }
                     
                     .nav-links {
-                        padding-top: 80px;
+                        top: 65px; /* CHANGED: Adjusted for smaller navbar */
+                        padding-top: 1.5rem; /* CHANGED: Reduced padding */
                         padding-left: 1.5rem;
                         padding-right: 1.5rem;
                     }
