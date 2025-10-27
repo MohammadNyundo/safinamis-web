@@ -478,3 +478,8 @@ a, button, .card-elegant, .btn-gold, .btn-navy, .input-elegant {
         overflow: hidden !important;
     }
 }
+
+/* Prevent background scroll when navbar menu is open */
+body.menu-open {
+    overflow: hidden;
+}
