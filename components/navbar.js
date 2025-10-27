@@ -2,6 +2,8 @@ class CustomNavbar extends HTMLElement {
     constructor() {
         super();
         this.isMobileMenuOpen = false;
+        this.originalParent = null;
+        this.originalNextSibling = null;
     }
 
     connectedCallback() {
@@ -61,6 +63,7 @@ class CustomNavbar extends HTMLElement {
     }
 
     initEventListeners() {
+        console.log('Initializing event listeners');
         const mobileMenu = this.querySelector('#mobileMenu');
         const navLinks = this.querySelector('#navLinks');
         
@@ -93,6 +96,7 @@ class CustomNavbar extends HTMLElement {
     }
 
     toggleMobileMenu() {
+        console.log('Toggling mobile menu');
         if (this.isMobileMenuOpen) {
             this.closeMobileMenu();
         } else {
@@ -101,29 +105,94 @@ class CustomNavbar extends HTMLElement {
     }
 
     openMobileMenu() {
+        console.log('Opening mobile menu');
         const navLinks = this.querySelector('#navLinks');
         const mobileMenuIcon = this.querySelector('.navbar-mobile-menu-icon');
         const mobileMenu = this.querySelector('#mobileMenu');
         
+        if (!navLinks) return;
+        
+        // Save position (only if not already moved)
+        if (this.originalParent === null) {
+            this.originalParent = navLinks.parentNode;
+            this.originalNextSibling = navLinks.nextSibling;
+        }
+        
         navLinks.classList.add('active');
+        
+        // Re-parent to body for z-index escape (only if not already there)
+        if (navLinks.parentNode !== document.body) {
+            document.body.appendChild(navLinks);
+        }
+        
+        // Styles: Let CSS handle most (half-page via max-height), but enforce basics
+        navLinks.style.position = 'fixed';
+        navLinks.style.zIndex = '999999';
+        navLinks.style.top = '70px';  // Below navbar (adjust to 65px on <480px if needed)
+        navLinks.style.left = '0';
+        navLinks.style.right = '0';
+        navLinks.style.width = '100%';
+        navLinks.style.height = 'auto';  // Content-driven, capped by CSS max-height
+        navLinks.style.background = 'rgba(255, 255, 255, 0.98)';
+        navLinks.style.backdropFilter = 'blur(20px)';
+        navLinks.style.display = 'flex';
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.alignItems = 'center';
+        navLinks.style.padding = '0.75rem 1.25rem';
+        navLinks.style.gap = '0.25rem';
+        navLinks.style.overflowY = 'auto';
+        navLinks.style.borderTop = '1px solid rgba(255, 215, 0, 0.1)';
+        navLinks.style.boxShadow = '0 4px 16px rgba(0, 31, 63, 0.08)';
+        navLinks.style.opacity = '0';
+        navLinks.style.transform = 'translateY(-10px)';
+        navLinks.style.isolation = 'isolate';
+        
         mobileMenu.classList.add('active');
         mobileMenuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>';
         this.isMobileMenuOpen = true;
         document.body.style.overflow = 'hidden';
         document.body.classList.add('navbar-menu-open');
+        
+        // Fade-down animation
+        requestAnimationFrame(() => {
+            navLinks.style.opacity = '1';
+            navLinks.style.transform = 'translateY(0)';
+        });
+        console.log('Half-page menu opened - Z:', window.getComputedStyle(navLinks).zIndex);
     }
 
     closeMobileMenu() {
-        const navLinks = this.querySelector('#navLinks');
+        const navLinks = document.querySelector('#navLinks');  // Global query for safety
         const mobileMenuIcon = this.querySelector('.navbar-mobile-menu-icon');
         const mobileMenu = this.querySelector('#mobileMenu');
         
+        if (!navLinks) return;
+        
         navLinks.classList.remove('active');
+        navLinks.style.pointerEvents = 'none';
+        
+        // Fade-up close
+        navLinks.style.opacity = '0';
+        navLinks.style.transform = 'translateY(-10px)';
+        
         mobileMenu.classList.remove('active');
         mobileMenuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>';
-        this.isMobileMenuOpen = false;
-        document.body.style.overflow = '';
-        document.body.classList.remove('navbar-menu-open');
+        
+        setTimeout(() => {
+            // Re-parent only if needed
+            if (this.originalParent && navLinks.parentNode !== this.originalParent) {
+                this.originalParent.insertBefore(navLinks, this.originalNextSibling);
+            }
+            // Reset all inline styles (let CSS take over)
+            navLinks.style.cssText = '';
+            navLinks.style.pointerEvents = '';
+            this.originalParent = null;
+            this.originalNextSibling = null;
+            this.isMobileMenuOpen = false;
+            document.body.style.overflow = '';
+            document.body.classList.remove('navbar-menu-open');
+            console.log('Half-page menu closed');
+        }, 250);
     }
 
     disconnectedCallback() {

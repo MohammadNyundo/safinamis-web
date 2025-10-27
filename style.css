@@ -1,13 +1,3 @@
-/* ===== ELEGANT TYPOGRAPHY ===== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 /* Rest of your existing CSS continues below... */
 
 /* ===== ELEGANT TYPOGRAPHY ===== */
@@ -414,40 +404,6 @@ a, button, .card-elegant, .btn-gold, .btn-navy, .input-elegant {
 .progress-75 { width: 75% !important; }
 .progress-100 { width: 100% !important; }
 
-/* ===== MOBILE NAVBAR OVERRIDES ===== */
-@media (max-width: 768px) {
-    /* Ensure navbar mobile menu works */
-    custom-navbar .nav-links {
-        display: none !important;
-        position: fixed !important;
-        top: 70px !important;
-        left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
-        background: rgba(255, 255, 255, 0.98) !important;
-        backdrop-filter: blur(20px) !important;
-        flex-direction: column !important;
-        padding-top: 2rem !important;
-        padding-left: 2rem !important;
-        padding-right: 2rem !important;
-        z-index: 999 !important;
-        overflow-y: auto !important;
-    }
-    
-    custom-navbar .nav-links.active {
-        display: flex !important;
-    }
-    
-    custom-navbar .mobile-menu {
-        display: flex !important;
-    }
-    
-    /* Prevent body scroll when menu is open */
-    body.navbar-menu-open {
-        overflow: hidden !important;
-    }
-}
-
 /* Prevent background scroll when navbar menu is open */
 body.menu-open {
     overflow: hidden;
@@ -595,141 +551,221 @@ body.menu-open {
     height: 80px;
 }
 
-/* === MOBILE STYLES === */
+/* ===== CONSOLIDATED MOBILE NAVBAR FIXES (REPLACE ALL OVERLAPPING MEDIA QUERIES) ===== */
 @media (max-width: 768px) {
+    /* Navbar base: Compact, no gap to hero */
     .navbar-component {
-        padding: 1rem 1.25rem;
+        padding: 1rem 1.25rem !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        z-index: 1000 !important;
+        height: auto !important; /* Prevents full-page takeover */
     }
-    
+
+    /* Hide spacer completely: Zero gap to hero */
+    .navbar-spacer {
+        display: none !important;
+    }
+
+    /* Push hero/content down by exact navbar height (alternative to spacer) */
+    body:has(custom-navbar) > *:first-child:not(.navbar-component) {
+        padding-top: 70px !important; /* Matches navbar ~70px height; adjust if needed */
+    }
+
+    .hero-section {
+        z-index: 1 !important;
+        position: relative !important;
+        overflow: visible !important;
+        margin-top: 0 !important; /* Kill any hero margin */
+    }
+
+    .hero-section > div.relative.z-10 { /* Target common Tailwind hero wrappers */
+        z-index: 2 !important; /* Above bg, below menu */
+        position: relative !important;
+    }
+
+    /* Mobile menu button */
     .navbar-mobile-menu {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: none !important;
+        border: none !important;
+        cursor: pointer !important;
+        padding: 0.5rem !important;
+        z-index: 1001 !important;
+        border-radius: 8px !important;
+        transition: all 0.3s ease !important;
     }
-    
+
+    .navbar-mobile-menu:hover {
+        background: rgba(0, 31, 63, 0.05) !important;
+    }
+
+    /* Closed menu: Fully hidden, no leaks */
+    custom-navbar .navbar-links {
+        display: none !important;
+        position: static !important;
+        z-index: auto !important;
+        opacity: 0 !important;
+        transform: translateY(-10px) !important;
+        transition: opacity 0.25s ease, transform 0.25s ease !important;
+        pointer-events: none !important;
+    }
+
+    /* Open menu: Half-page centered dropdown, above everything */
+    custom-navbar .navbar-links.active {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        position: fixed !important; /* Global positioning */
+        top: 70px !important; /* Flush to navbar bottom */
+        left: 0 !important;
+        right: 0 !important;
+        width: 100vw !important;
+        max-height: 50vh !important; /* Half-page limit */
+        height: auto !important; /* Grows to content, capped by max */
+        background: rgba(255, 255, 255, 0.98) !important;
+        backdrop-filter: blur(20px) !important;
+        border-top: 1px solid rgba(255, 215, 0, 0.1) !important;
+        box-shadow: 0 4px 16px rgba(0, 31, 63, 0.08) !important;
+        padding: 0.75rem 1.25rem !important; /* Compact padding */
+        gap: 0.25rem !important;
+        overflow-y: auto !important; /* Scroll if links overflow half-page */
+        z-index: 999999 !important; /* Nuclear override: Above hero/body */
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        isolation: isolate !important; /* Own stacking context */
+        animation: navbarSlideIn 0.3s ease-out !important;
+        pointer-events: auto !important;
+    }
+
+    /* Centered links inside half-page menu */
+    custom-navbar .navbar-links.active .navbar-link {
+        width: 100% !important;
+        max-width: 300px !important; /* Center cap for narrow screens */
+        padding: 0.75rem 1rem !important;
+        border-bottom: 1px solid rgba(0, 31, 63, 0.05) !important;
+        text-align: center !important;
+        justify-content: center !important;
+        font-size: 1rem !important;
+        font-weight: 500 !important;
+    }
+
+    custom-navbar .navbar-links.active .navbar-link:last-child {
+        border-bottom: none !important;
+    }
+
+    /* Slim CTA in menu */
+    custom-navbar .navbar-links.active .navbar-cta-button {
+        margin-top: 0.5rem !important;
+        padding: 0.75rem 1rem !important;
+        align-self: stretch !important;
+        text-align: center !important;
+        border-radius: 8px !important;
+        font-size: 1rem !important;
+    }
+
+    /* Logo tweaks for mobile */
     .navbar-logo {
-        font-size: 1.1rem;
+        font-size: 1.1rem !important;
     }
-    
+
     .navbar-logo-video {
-        width: 28px;
-        height: 28px;
+        width: 28px !important;
+        height: 28px !important;
     }
-    
-    .navbar-links {
-        position: fixed;
-        top: 70px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(20px);
-        flex-direction: column;
-        justify-content: flex-start;
-        padding-top: 2rem;
-        padding-left: 2rem;
-        padding-right: 2rem;
-        box-shadow: 0 4px 30px rgba(0, 31, 63, 0.1);
-        display: none;
-        gap: 0;
-        z-index: 999;
-        overflow-y: auto;
-        border-top: 1px solid rgba(255, 215, 0, 0.1);
-    }
-    
-    .navbar-links.active {
-        display: flex;
-        animation: navbarSlideIn 0.3s ease-out;
-    }
-    
-    @keyframes navbarSlideIn {
-        from {
-            opacity: 0;
-            transform: translateY(-10px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
-    .navbar-link {
-        padding: 1.25rem 0;
-        width: 100%;
-        justify-content: flex-start;
-        border-bottom: 1px solid rgba(0, 31, 63, 0.08);
-        font-size: 1.1rem;
-        font-weight: 500;
-    }
-    
-    .navbar-link:last-child {
-        border-bottom: none;
-    }
-    
-    .navbar-link-icon {
-        width: 20px;
-        height: 20px;
-        margin-right: 0.75rem;
-    }
-    
-    .navbar-cta-button {
-        margin-top: 1rem;
-        text-align: center;
-        padding: 1rem 1.5rem;
-        font-size: 1rem;
-        border-radius: 10px;
-        justify-content: center;
-        background: linear-gradient(135deg, #001F3F, #002E5D);
-    }
-    
+
+    /* Hamburger icon rotation */
     .navbar-mobile-menu.active .navbar-mobile-menu-icon {
-        transform: rotate(90deg);
+        transform: rotate(90deg) !important;
     }
-    
-    /* Body scroll lock when menu is open */
+
+    /* Lock body scroll */
     body.navbar-menu-open {
         overflow: hidden !important;
     }
+
+    /* Animation (keep your existing) */
+    @keyframes navbarSlideIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Smaller screens */
+    @media (max-width: 480px) {
+        .navbar-component {
+            padding: 0.875rem 1rem !important;
+        }
+
+        body:has(custom-navbar) > *:first-child:not(.navbar-component) {
+            padding-top: 65px !important; /* Adjust for smaller padding */
+        }
+
+        custom-navbar .navbar-links.active {
+            top: 65px !important;
+            padding: 0.5rem 1rem !important;
+        }
+
+        .navbar-logo {
+            font-size: 1rem !important;
+        }
+
+        .navbar-logo-video {
+            width: 24px !important;
+            height: 24px !important;
+        }
+    }
 }
 
+/* ===== FINAL DESKTOP NAVBAR OVERRIDES ===== */
 @media (min-width: 769px) {
+    .navbar-component {
+        padding: 1rem 2rem !important;
+    }
+    
+    .navbar-logo {
+        font-size: 1.5rem !important;
+    }
+    
     .navbar-links {
         display: flex !important;
+        position: static !important;
+        z-index: auto !important;
+        gap: 2rem !important;
+        align-items: center !important;
+        flex-shrink: 0 !important;
     }
     
-    .navbar-component {
-        padding: 1rem 2rem;
-    }
-    
-    .navbar-logo {
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar-component {
-        padding: 0.875rem 1rem;
+    .navbar-links li {
+        display: flex !important;
+        align-items: center !important;
     }
     
     .navbar-logo {
-        font-size: 1rem;
+        display: flex !important;
+        align-items: center !important;
+        flex-shrink: 0 !important;
     }
     
-    .navbar-logo-video {
-        width: 24px;
-        height: 24px;
-        margin-right: 0.5rem;
+    .navbar-logo-video-container {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
     }
     
-    .navbar-links {
-        top: 65px;
-        padding-top: 1.5rem;
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
+    .navbar-component {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
     }
     
-    .navbar-link {
-        padding: 1rem 0;
-        font-size: 1rem;
+    .navbar-mobile-menu {
+        position: relative !important;
+        z-index: 1002 !important;
     }
 }

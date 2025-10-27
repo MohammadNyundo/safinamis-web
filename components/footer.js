@@ -20,7 +20,11 @@ class CustomFooter extends HTMLElement {
                             Transform your accommodation management with our comprehensive solution. Eliminate manual errors, gain real-time insights, and reclaim your peace of mind with Safina MIS.
                         </p>
                         <div class="social-links">
-                            <a href="https://wa.me/254752012827" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">
+                            <a href="https://wa.me/254752012827?text=Hi%20Safina%20MIS%20team,%20I%20saw%20your%20website%20and%20would%20like%20to%20learn%20more%20about%20your%20accommodation%20management%20system." 
+                               class="social-link" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               aria-label="Contact us on WhatsApp">
                                 <svg class="social-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
                                 </svg>
@@ -104,7 +108,9 @@ class CustomFooter extends HTMLElement {
                         <h3 class="footer-heading">Contact Us</h3>
                         <ul class="footer-links">
                             <li class="footer-link">
-                                <a href="tel:+254752012827" class="footer-link-item contact-link">
+                                <a href="https://wa.me/254752012827?text=Hi%20Safina%20MIS%20team,%20I%20saw%20your%20website%20and%20would%20like%20to%20learn%20more%20about%20your%20accommodation%20management%20system." 
+                                   target="_blank" 
+                                   class="footer-link-item contact-link">
                                     <svg class="footer-link-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                                     </svg>
@@ -135,6 +141,17 @@ class CustomFooter extends HTMLElement {
                     <p>&copy; 2024 Safina MIS by Prolific Virtual Assistant. All rights reserved.</p>
                     <p class="prolific-credit">Crafted with excellence by Prolific VA</p>
                 </div>
+
+                <!-- Floating WhatsApp Button -->
+                <a href="https://wa.me/254752012827?text=Hi%20Safina%20MIS%20team,%20I%20saw%20your%20website%20and%20would%20like%20to%20learn%20more%20about%20your%20accommodation%20management%20system." 
+                   target="_blank"
+                   class="whatsapp-float"
+                   aria-label="Chat with us on WhatsApp">
+                   <svg class="whatsapp-icon" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893-.001-3.189-1.262-6.187-3.55-8.444"/>
+                   </svg>
+                   <span class="whatsapp-pulse"></span>
+                </a>
             </footer>
         `;
 
@@ -326,6 +343,68 @@ class CustomFooter extends HTMLElement {
                     font-weight: 500;
                     margin-top: 0.5rem;
                 }
+
+                /* WhatsApp Floating Button */
+                .whatsapp-float {
+                    position: fixed;
+                    bottom: 25px;
+                    right: 25px;
+                    background: #25D366;
+                    color: white;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+                    z-index: 1000;
+                    transition: all 0.3s ease;
+                    animation: float 3s ease-in-out infinite;
+                    text-decoration: none;
+                }
+
+                .whatsapp-float:hover {
+                    transform: scale(1.1);
+                    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+                    background: #20bd5a;
+                }
+
+                .whatsapp-icon {
+                    width: 30px;
+                    height: 30px;
+                }
+
+                /* WhatsApp Pulse Animation */
+                .whatsapp-pulse {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    background: #25D366;
+                    animation: pulse 2s infinite;
+                    z-index: -1;
+                }
+
+                @keyframes float {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-10px); }
+                }
+
+                @keyframes pulse {
+                    0% {
+                        transform: scale(1);
+                        opacity: 0.8;
+                    }
+                    70% {
+                        transform: scale(1.5);
+                        opacity: 0;
+                    }
+                    100% {
+                        transform: scale(1.5);
+                        opacity: 0;
+                    }
+                }
                 
                 @media (max-width: 1024px) {
                     .footer-content {
@@ -351,6 +430,18 @@ class CustomFooter extends HTMLElement {
                     .social-links {
                         justify-content: center;
                     }
+
+                    .whatsapp-float {
+                        bottom: 20px;
+                        right: 20px;
+                        width: 55px;
+                        height: 55px;
+                    }
+                    
+                    .whatsapp-icon {
+                        width: 28px;
+                        height: 28px;
+                    }
                 }
             </style>
         `;
@@ -369,6 +460,16 @@ class CustomFooter extends HTMLElement {
                 }
             });
         });
+
+        // Track WhatsApp button clicks
+        const whatsappButton = this.querySelector('.whatsapp-float');
+        if (whatsappButton) {
+            whatsappButton.addEventListener('click', (e) => {
+                if (window.SafinaApp) {
+                    window.SafinaApp.trackEvent('whatsapp_click', { source: 'floating_button' });
+                }
+            });
+        }
     }
 }
 
