@@ -1,4 +1,4 @@
-// Safina MIS - Main JavaScript Functionality (Simplified)
+// Safina MIS - Main JavaScript Functionality (Complete & Fixed)
 class SafinaApp {
     constructor() {
         this.init();
@@ -17,6 +17,9 @@ class SafinaApp {
         this.initSmoothScroll();
         this.initFormHandlers();
         this.initAnalyticsTracking();
+        this.initHeroVideoCarousel(); // Fixed: Hero video carousel
+        this.initTestimonialCarousel(); // Fixed: Testimonial carousel
+        this.initEmotionalScrollReveal();
     }
 
     // Smooth scrolling for navigation
@@ -183,6 +186,193 @@ class SafinaApp {
         });
     }
 
+    // FIXED: Hero Video Carousel (uses specific selector for hero section)
+     initHeroVideoCarousel() {
+        // Use a simpler selector - find the hero section by structure
+        const heroSection = document.querySelector('section.relative.bg-gradient-to-r');
+        if (!heroSection) {
+            console.log('Hero section not found');
+            return;
+        }
+
+        const heroSlides = heroSection.querySelectorAll('.carousel-slide');
+        if (heroSlides.length === 0) {
+            console.log('No hero slides found');
+            return;
+        }
+
+        console.log('Found', heroSlides.length, 'hero slides');
+
+        let currentHeroIndex = 0;
+        const displayDuration = 6000;
+
+        function showHeroSlide(index) {
+            console.log('Showing hero slide:', index);
+            heroSlides.forEach((slide, i) => {
+                slide.style.opacity = i === index ? '1' : '0';
+            });
+
+            const video = heroSlides[index].querySelector('video');
+            if (video) {
+                video.currentTime = 0;
+                video.play().catch(e => {
+                    // Silent fail for autoplay
+                });
+            }
+        }
+
+        // Initial slide
+        showHeroSlide(currentHeroIndex);
+
+        // Loop through slides
+        setInterval(() => {
+            currentHeroIndex = (currentHeroIndex + 1) % heroSlides.length;
+            showHeroSlide(currentHeroIndex);
+        }, displayDuration);
+    }
+
+    // FIXED: Simplified Testimonial Carousel
+    initTestimonialCarousel() {
+        const carousel = document.getElementById('testimonialCarousel');
+        if (!carousel) {
+            console.log('Testimonial carousel not found');
+            return;
+        }
+
+        console.log('Initializing testimonial carousel');
+
+        const track = carousel.querySelector('.carousel-track');
+        const slides = Array.from(carousel.querySelectorAll('.testimonial-slide')); // ✅ fix class name
+        const prevBtn = carousel.querySelector('.carousel-prev');
+        const nextBtn = carousel.querySelector('.carousel-next');
+        const dots = carousel.querySelectorAll('.carousel-dot');
+        
+        let currentIndex = 0;
+        let autoScrollInterval;
+        const autoScrollDelay = 5000;
+
+        function getSlidesPerView() {
+            return window.innerWidth < 768 ? 1 : 2;
+        }
+
+        function updateCarousel() {
+            const slidesPerView = getSlidesPerView();
+            const totalGroups = Math.ceil(slides.length / slidesPerView);
+            const trackWidth = track.offsetWidth;
+            const translateX = -currentIndex * trackWidth; // ✅ smoother + works for % widths
+
+            track.style.transform = `translateX(${translateX}px)`;
+
+            // ✅ Update dot state correctly
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        function nextSlide() {
+            const slidesPerView = getSlidesPerView();
+            const maxIndex = Math.max(0, Math.ceil(slides.length / slidesPerView) - 1);
+
+            currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            const slidesPerView = getSlidesPerView();
+            const maxIndex = Math.max(0, Math.ceil(slides.length / slidesPerView) - 1);
+
+            currentIndex = currentIndex <= 0 ? maxIndex : currentIndex - 1;
+            updateCarousel();
+        }
+
+        // ✅ Touch swipe (mobile)
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        track.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            clearInterval(autoScrollInterval);
+        });
+
+        track.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const difference = touchStartX - touchEndX;
+
+            if (Math.abs(difference) > swipeThreshold) {
+                if (difference > 0) nextSlide();
+                else prevSlide();
+            }
+
+            setTimeout(() => startAutoScroll(), 800); // ✅ smoother resume
+        }
+
+        // ✅ Navigation
+        if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); resetAutoScroll(); });
+        if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); resetAutoScroll(); });
+
+        // ✅ Dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentIndex = index;
+                updateCarousel();
+                resetAutoScroll();
+            });
+        });
+
+        // ✅ Auto scroll
+        function startAutoScroll() {
+            autoScrollInterval = setInterval(nextSlide, autoScrollDelay);
+        }
+
+        function resetAutoScroll() {
+            clearInterval(autoScrollInterval);
+            startAutoScroll();
+        }
+
+        // ✅ Hover pause
+        carousel.addEventListener('mouseenter', () => clearInterval(autoScrollInterval));
+        carousel.addEventListener('mouseleave', startAutoScroll);
+
+        // ✅ Init
+        updateCarousel();
+        startAutoScroll();
+
+        // ✅ Responsive recalculation
+        window.addEventListener('resize', updateCarousel);
+    }
+
+
+    // Reveal emotional cards when scrolled into view
+    // Reveal emotional cards when scrolled into view, reset when out of view
+    initEmotionalScrollReveal() {
+        const cards = document.querySelectorAll('.solution-emotion');
+        if (!cards.length) return;
+
+        // Only apply scroll-based reveal for mobile/tablet
+        if (window.innerWidth < 1024) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            cards.forEach((card, index) => {
+                card.style.transitionDelay = `${index * 0.2}s`;
+                observer.observe(card);
+            });
+        }
+    }
+
+
     // Notification system
     showNotification(message, type = 'info') {
         const existingNotification = document.querySelector('.safina-notification');
@@ -218,3 +408,8 @@ window.SafinaApp = safinaApp;
 window.addEventListener('error', (event) => {
     console.error('Application error:', event.error);
 });
+
+// Export for module systems (if needed)
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = SafinaApp;
+}

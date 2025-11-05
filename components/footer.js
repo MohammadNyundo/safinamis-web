@@ -10,9 +10,10 @@ class CustomFooter extends HTMLElement {
                 <div class="footer-content">
                     <div class="footer-brand">
                         <div class="footer-logo">
-                            <svg class="footer-logo-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
-                            </svg>
+                            <video class="footer-logo-icon" autoplay loop muted playsinline>
+                                <source src="/assets/grok-video-d80d7bf5-bbd8-4491-a852-411a63f509e4.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
                             Safina MIS
                         </div>
                         <div class="footer-tagline">The Ark for Your Business Operations</div>
@@ -20,26 +21,65 @@ class CustomFooter extends HTMLElement {
                             Transform your accommodation management with our comprehensive solution. Eliminate manual errors, gain real-time insights, and reclaim your peace of mind with Safina MIS.
                         </p>
                         <div class="social-links">
+                            <!-- WhatsApp -->
                             <a href="https://wa.me/254752012827?text=Hi%20Safina%20MIS%20team,%20I%20saw%20your%20website%20and%20would%20like%20to%20learn%20more%20about%20your%20accommodation%20management%20system." 
-                               class="social-link" 
-                               target="_blank" 
-                               rel="noopener noreferrer" 
-                               aria-label="Contact us on WhatsApp">
+                                class="social-link" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                aria-label="Contact us on WhatsApp">
                                 <svg class="social-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
                                 </svg>
                             </a>
-                            <a href="https://x.com/prolific_va" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Twitter">
+
+                            <!-- Twitter/X -->
+                            <a href="https://x.com/prolific_va" 
+                                class="social-link" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                aria-label="Follow us on Twitter">
                                 <svg class="social-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                        d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
                                 </svg>
                             </a>
-                            <a href="mailto:prolificva.services@gmail.com" class="social-link" aria-label="Send us an email">
+
+                            <!-- Email -->
+                            <a href="mailto:prolificva.services@gmail.com" 
+                                class="social-link" 
+                                aria-label="Send us an email">
                                 <svg class="social-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                            </a>
+
+                            <!-- 🔹 TikTok -->
+                            <a href="https://www.tiktok.com/@prolific_va" 
+                                class="social-link" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                aria-label="Follow us on TikTok">
+                                <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.5 2h2.4c.2 1.5 1.1 2.8 2.5 3.6V9c-.9 0-1.8-.2-2.6-.5V15a5.5 5.5 0 11-5.5-5.5v2.4a3.1 3.1 0 103.1 3.1V2z"/>
+                                </svg>
+                            </a>
+
+                            <!-- 🔹 Instagram -->
+                            <a href="https://www.instagram.com/prolific__va?igsh=ZWNsdTdkZ2Q5bmtu" 
+                                class="social-link" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                aria-label="Follow us on Instagram">
+                                <svg class="social-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+                                <circle cx="17.5" cy="6.5" r="1.5"/>
                                 </svg>
                             </a>
                         </div>
+
                     </div>
                     
                     <div class="footer-section">
@@ -94,7 +134,7 @@ class CustomFooter extends HTMLElement {
                                 </a>
                             </li>
                             <li class="footer-link">
-                                <a href="#health-check" class="footer-link-item">
+                                <a href="#" class="footer-link-item contact-link" data-open="pricingModal">
                                     <svg class="footer-link-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
                                     </svg>
@@ -207,10 +247,10 @@ class CustomFooter extends HTMLElement {
                 
                 .footer-logo-icon {
                     margin-right: 0.75rem;
-                    color: #FFD700;
-                    stroke-width: 2;
                     width: 24px;
                     height: 24px;
+                    border-radius: 4px;
+                    object-fit: cover;
                 }
                 
                 .footer-tagline {
