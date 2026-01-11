@@ -30,426 +30,212 @@
     }
 </script></head>
 <body class="bg-gray-50 font-sans">
-<div class="splash-container" id="splash">
-    <video
-    id="splashVideo"
-    src="assets/grok-video-d80d7bf5-bbd8-4491-a852-411a63f509e4.mp4"
-    autoplay
-    muted
-    playsinline
-    preload="auto"
-    class="splash-video"
-    ></video>
 
-</div>
-
-<!-- WRAP MAIN PAGE CONTENT SO SPLASH CAN HIDE IT -->
-<div id="main-content" style="display:none; opacity:0; transition: opacity 300ms ease;">
-
-    <custom-navbar></custom-navbar>
+<custom-navbar></custom-navbar>
     
-<!-- Hero Section -->
-<!-- Hero Section -->
-<section class="relative bg-gradient-to-r from-[#011c3a] to-[#022a57] text-white py-24 overflow-hidden">
-    <div class="absolute inset-0 bg-[#011c3a]/80 z-0"></div>
+<!-- Hero Section: For the People on the Road -->
+<!-- Hero Section: For the People on the Road -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden text-center hero">
 
-    <div class="container mx-auto px-6 relative z-10">
-        <div class="flex flex-col lg:flex-row items-center justify-between gap-16">
+  <!-- Background Image -->
+  <div class="absolute inset-0 z-0">
+    <img 
+      src="assets/vignette.png"
+      alt="Young traveler with a backpack checking directions at a busy Kenyan bus terminal"
+      class="w-full h-full object-cover object-center"
+    >
+    <div class="absolute inset-0 bg-black/15"></div>
+    <div class="absolute inset-0 bg-radial-vignette"></div>
+  </div>
 
-        <!-- Left: Text -->
-        <div class="lg:w-1/2 text-center lg:text-left space-y-8">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
-            Bookings That <span class="text-yellow-400">Never Sleep</span>
-            </h1>
+  <!-- Hero Content -->
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="max-w-4xl mx-auto space-y-10 text-center">
+      <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight hero-headline">
+        For the people on the road.
+      </h1>
 
-            <p class="text-lg md:text-xl text-gray-200 max-w-md mx-auto lg:mx-0">
-            Your guests book instantly. Your team works stress-free.  
-            Your revenue grows <span class="font-semibold text-yellow-400">24/7</span>.
-            </p>
+      <p class="text-xl md:text-2xl text-gray-200 font-light leading-relaxed max-w-2xl mx-auto hero-subtext">
+        <span class="text-gold font-semibold">Safina MIS</span> helps travelers know where they’ll sleep — before they arrive.
+      </p>
 
-            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-            <a href="#demo" 
-                class="bg-yellow-400 text-[#011c3a] px-8 py-4 rounded-lg font-bold 
-                        hover:bg-yellow-300 transition transform hover:scale-105 shadow-lg text-center">
-                See It Work
-            </a>
-            <a href="#health-check" 
-                class="bg-white/20 text-white px-8 py-4 rounded-lg font-bold 
-                        hover:bg-white/30 transition text-center border border-white/30">
-                Free Health Check
-            </a>
-            </div>
-        </div>
-
-        <!-- Right: Balanced Video -->
-        <div class="lg:w-5/12 flex justify-center">
-            <div class="relative w-[300px] md:w-[340px] aspect-[4/5] max-h-[480px] overflow-hidden rounded-2xl shadow-2xl border border-white/10">
-            
-            <!-- Guest -->
-            <div class="carousel-slide absolute inset-0 opacity-100 transition-opacity duration-700">
-                <video class="w-full h-full object-cover rounded-2xl" autoplay loop muted playsinline>
-                <source src="assets/happpy family guests.mp4" type="video/mp4">
-                </video>
-                <div class="absolute bottom-0 left-0 right-0 bg-black/50 text-center py-3">
-                <h3 class="text-gold font-bold mb-2 text-base">For Guests</h3>
-                <p class="text-xs text-gray-300">Book Instantly • Anywhere, Anytime</p>
-                </div>
-            </div>
-
-            <!-- Reception -->
-            <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-700">
-                <video class="w-full h-full object-cover rounded-2xl" autoplay loop muted playsinline>
-                <source src="assets/receptionist.mp4" type="video/mp4">
-                </video>
-                <div class="absolute bottom-0 left-0 right-0 bg-black/50 text-center py-3">
-                <h3 class="text-green-400 font-bold mb-2 text-base">For Reception</h3>
-                <p class="text-xs text-gray-300">Professional Service • More Confidence • Less Stress</p>
-                </div>
-            </div>
-
-            <!-- Manager -->
-            <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-700">
-                <video class="w-full h-full object-cover rounded-2xl" autoplay loop muted playsinline>
-                <source src="assets/manager.mp4" type="video/mp4">
-                </video>
-                <div class="absolute bottom-0 left-0 right-0 bg-black/50 text-center py-3">
-                <h3 class="text-blue-400 font-bold mb-2 text-base">For Managers</h3>
-                <p class="text-xs text-gray-300">Total Freedom • Auto-Revenue • Peace of Mind</p>
-                </div>
-            </div>
-
-            </div>
-        </div>
-
-        </div>
+      <div class="pt-8 hero-cta">
+        <a href="#story1" class="btn-gold px-10 py-5 rounded-xl font-semibold text-lg shadow-xl hover:shadow-gold/50 inline-block">
+          See the Story
+        </a>
+      </div>
     </div>
+  </div>
 
-    <div class="absolute bottom-0 left-0 right-0 h-16 bg-white transform skew-y-2 origin-bottom"></div>
+  <!-- Scroll Hint -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
+    <svg class="w-10 h-10 text-gold opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+    </svg>
+  </div>
+
 </section>
 
-<!-- Emotional Pain Points Section - Restoring the Journey -->
-<section class="py-20 bg-white">
+<!-- Story Section 01 -->
+<section id="story1" class="py-28 bg-white">
     <div class="container mx-auto px-6">
-        <!-- Emotional Header -->
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <h2 class="text-4xl font-bold text-navy mb-6 leading-tight">
-                From Booking Chaos to 24/7 Revenue
+        <div class="max-w-3xl mx-auto text-center">
+
+            <!-- Label -->
+            <span class="inline-block text-gold font-semibold tracking-wide uppercase mb-6">
+                Story 01
+            </span>
+
+            <!-- Title -->
+            <h2 class="text-4xl md:text-5xl font-bold text-navy leading-tight mb-10">
+                It Started With a Question
             </h2>
-            <p class="text-xl text-gray-600">
-                See how Kenyan accommodation owners turned manual stress into automated success.
-            </p>
-        </div>
 
-        <!-- Emotional Transformation Cards -->
-        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            
-            <!-- 1. REVENUE ANXIETY → PEACE OF MIND -->
-            <div class="card-elegant group emotional-card" data-emotion="anxiety">
-                <div class="emotional-icon mb-6">
-                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto transition-transform group-hover:scale-110">
-                        <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                    </div>
-                </div>
-                
-                <h3 class="text-xl font-bold text-center mb-4 text-navy">
-                    That Sinking Feeling...
-                </h3>
-                
-                <div class="emotional-content">
-                    <div class="problem-emotion bg-red-50 border-l-4 border-red-500 p-4 mb-4 rounded-r-lg">
-                        <p class="text-red-800 text-sm leading-relaxed">
-                            "Another day, another missed booking. Clients visit your website but they cannot create reservations directly. 
-                            <strong>Revenue slips away while you sleep.</strong>"
-                        </p>
-                    </div>
-                    
-                    <div class="solution-emotion bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg transform transition-all duration-500 opacity-0 group-hover:opacity-100">
-                        <p class="text-green-800 text-sm leading-relaxed">
-                            "Now your website books guests automatically. 
-                            <strong>M-Pesa payments confirm instantly.</strong> 
-                            Wake up to new revenue every morning."
-                        </p>
-                    </div>
-                </div>
+            <!-- Story -->
+            <div class="space-y-7">
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    In September 2021, during the COVID curfew, a student and his mother arrived in a town they didn’t know.
+                    It was late. Bags were heavy. Every hotel gate they knocked on was fully occupied.
+                </p>
 
-                <div class="emotional-result mt-6 text-center">
-                    <div class="inline-flex items-center bg-gold/20 px-4 py-2 rounded-full">
-                        <span class="text-navy font-bold">+40% Bookings</span>
-                        <span class="text-gold mx-2">•</span>
-                        <span class="text-gray-600 text-sm">24/7 revenue</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 2. TEAM STRESS → CONFIDENT SERVICE -->
-            <div class="card-elegant group emotional-card" data-emotion="stress">
-                <div class="emotional-icon mb-6">
-                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto transition-transform group-hover:scale-110">
-                        <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z"/>
-                        </svg>
-                    </div>
-                </div>
-                
-                <h3 class="text-xl font-bold text-center mb-4 text-navy">
-                    Reception Desk Chaos
-                </h3>
-                
-                <div class="emotional-content">
-                    <div class="problem-emotion bg-orange-50 border-l-4 border-orange-500 p-4 mb-4 rounded-r-lg">
-                        <p class="text-orange-800 text-sm leading-relaxed">
-                            "Forgotten reservations, double bookings, angry guests. 
-                            <strong>Your team looks overwhelmed</strong> and you can't blame them."
-                        </p>
-                    </div>
-                    
-                    <div class="solution-emotion bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg transform transition-all duration-500 opacity-0 group-hover:opacity-100">
-                        <p class="text-green-800 text-sm leading-relaxed">
-                            "Digital records, automatic check-ins, instant receipts. 
-                            <strong>Your team smiles again</strong> and focuses on guests."
-                        </p>
-                    </div>
-                </div>
-
-                <div class="emotional-result mt-6 text-center">
-                    <div class="inline-flex items-center bg-gold/20 px-4 py-2 rounded-full">
-                        <span class="text-navy font-bold">90% Less Stress</span>
-                        <span class="text-gold mx-2">•</span>
-                        <span class="text-gray-600 text-sm">Confident team</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 3. MANAGER OVERLOAD → BUSINESS GROWTH -->
-            <div class="card-elegant group emotional-card" data-emotion="overload">
-                <div class="emotional-icon mb-6">
-                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto transition-transform group-hover:scale-110">
-                        <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z"/>
-                        </svg>
-                    </div>
-                </div>
-                
-                <h3 class="text-xl font-bold text-center mb-4 text-navy">
-                    Stuck Managing, Not Growing
-                </h3>
-                
-                <div class="emotional-content">
-                    <div class="problem-emotion bg-red-50 border-l-4 border-red-500 p-4 mb-4 rounded-r-lg">
-                        <p class="text-red-800 text-sm leading-relaxed">
-                            "You have to watch every reservation, confirm every payment, and solve every mix-up. 
-                            <strong>You feel stagnant and need growth.</strong>"
-                        </p>
-                    </div>
-                    
-                    <div class="solution-emotion bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg transform transition-all duration-500 opacity-0 group-hover:opacity-100">
-                        <p class="text-green-800 text-sm leading-relaxed">
-                            "Safina MIS gives full visibility from anywhere. Real-time reports and instant updates keep everything transparent. 
-                            <strong>Focus on strategy and revenue — not daily chaos.</strong>"
-                        </p>
-                    </div>
-                </div>
-
-                <div class="emotional-result mt-6 text-center">
-                    <div class="inline-flex items-center bg-gold/20 px-4 py-2 rounded-full">
-                        <span class="text-navy font-bold">100% Peace of Mind</span>
-                        <span class="text-gold mx-2">•</span>
-                        <span class="text-gray-600 text-sm">Peace, control and growth</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Testimonials Carousel Section -->
-        <div class="mt-20 bg-gradient-to-r from-navy/5 to-gold/5 rounded-2xl p-4 md:p-8 border border-gold/20">
-            <div class="text-center mb-8 md:mb-12">
-                <h3 class="text-2xl font-bold text-navy mb-3">
-                    Kenyan Managers Who Found Peace, Control & Growth
-                </h3>
-                <p class="text-gray-600 text-lg">
-                    Real stories from accommodation owners using Safina MIS
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    Standing under a dim streetlight, one thought kept repeating.
                 </p>
             </div>
-            
-            <!-- Carousel Container -->
-            <div class="w-full max-w-6xl mx-auto px-2 md:px-4">
-                <div class="testimonial-carousel relative" id="testimonialCarousel">
-                    <!-- Carousel Track -->
-                    <div class="carousel-track flex transition-transform duration-500 ease-out"
-                        style="transform: translateX(0%)">
-                        
-                        <!-- Testimonial 1 -->
-                        <div class="testimonial-slide flex-shrink-0 w-full md:w-1/2 px-4">
-                            <div class="testimonial-card emotional-testimonial h-full">
-                                <div class="flex items-start mb-4">
-                                    <div class="w-14 h-14 rounded-full overflow-hidden mr-4 border-2 border-gold flex-shrink-0">
-                                        <img src="assets/kgh.png" alt="Kakamega Guest House" class="w-full h-full object-cover">
-                                    </div>
-                                    <div class="min-w-0">
-                                        <h4 class="font-bold text-navy text-lg">Mr. Julius</h4>
-                                        <p class="text-gold font-semibold text-sm">Kakamega Guest House(72 rooms, 1 Hall)</p>
-                                    </div>
-                                </div>
-                                <p class="text-gray-600 leading-relaxed mb-4">
-                                    "I was managing in the dark. The constant worry about manual errors was exhausting. 
-                                    <strong class="text-navy">Safina MIS gave me complete visibility and control.</strong> 
-                                    I finally sleep peacefully."
-                                </p>
-                                <div class="flex items-center text-gold text-sm font-semibold space-x-4">
-                                    <span class="flex items-center">
-                                        <span class="w-2 h-2 bg-gold rounded-full mr-2"></span>
-                                        89% fewer errors
-                                    </span>
-                                    <span class="flex items-center">
-                                        <span class="w-2 h-2 bg-gold rounded-full mr-2"></span>
-                                        24/7 bookings
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
 
-                        <!-- Testimonial 2 -->
-                        <div class="testimonial-slide flex-shrink-0 w-full md:w-1/2 px-4">
-                            <div class="testimonial-card emotional-testimonial h-full">
-                                <div class="flex items-start mb-4">
-                                    <div class="w-14 h-14 rounded-full overflow-hidden mr-4 border-2 border-gold flex-shrink-0">
-                                        <img src="assets/fouB.png" alt="Fountain Brooke Gardens" class="w-full h-full object-cover">
-                                    </div>
-                                    <div class="min-w-0">
-                                        <h4 class="font-bold text-navy text-lg">Mr. Evans</h4>
-                                        <p class="text-gold font-semibold text-sm">Fountain Brooke Gardens(50 rooms)</p>
-                                    </div>
-                                </div>
-                                <p class="text-gray-600 leading-relaxed mb-4">
-                                    "Our booking efficiency skyrocketed. 
-                                    <strong class="text-navy">What used to take hours now happens automatically.</strong> 
-                                    This is the modern solution Kenyan hospitality needed."
-                                </p>
-                                <div class="flex items-center text-gold text-sm font-semibold space-x-4">
-                                    <span class="flex items-center">
-                                        <span class="w-2 h-2 bg-gold rounded-full mr-2"></span>
-                                        60% more bookings
-                                    </span>
-                                    <span class="flex items-center">
-                                        <span class="w-2 h-2 bg-gold rounded-full mr-2"></span>
-                                        Happy team
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Navigation Arrows -->
-                    <button class="carousel-prev absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-white rounded-full p-3 shadow-lg border border-gold/30 hover:bg-gold/10 transition-all z-10 hidden md:block">
-                        <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-                        </svg>
-                    </button>
-                    
-                    <button class="carousel-next absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-white rounded-full p-3 shadow-lg border border-gold/30 hover:bg-gold/10 transition-all z-10 hidden md:block">
-                        <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                        </svg>
-                    </button>
-
-                    <!-- Dots Indicator -->
-                    <div class="flex justify-center mt-8 space-x-2 carousel-dots">
-                        <button class="carousel-dot w-3 h-3 rounded-full bg-gold/30 transition-all active" data-index="0"></button>
-                        <button class="carousel-dot w-3 h-3 rounded-full bg-gold/30 transition-all" data-index="1"></button>
-                    </div>
-                </div>
+            <!-- The Question (Intentional Break) -->
+            <div class="max-w-xl mx-auto my-12">
+                <blockquote class="border-l-4 border-gold pl-6 text-xl italic text-navy font-medium text-left">
+                    “What if accommodation could be booked
+                    <span class="text-gold">before arrival</span>?”
+                </blockquote>
             </div>
+
+            <!-- Resolution -->
+            <div class="space-y-6">
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    That night, they found temporary shelter at a local mosque.
+                    The night passed — but the problem stayed.
+                </p>
+
+                <p class="text-lg text-gray-700 font-medium">
+                    That question quietly became the foundation of
+                    <span class="text-gold font-semibold">Safina MIS</span>.
+                </p>
+            </div>
+
         </div>
     </div>
 </section>
-<!-- Visual Impact Section - UPDATED -->
-<section class="py-20 bg-gray-50">
-    <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-4 text-navy">Transforming Accommodation Across Kenya</h2>
-        <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">From guesthouses to hotels, B&Bs to lodges - bringing modern management to every type of accommodation business.</p>
-        
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            <!-- Guesthouse -->
-            <div class="bg-white rounded-xl p-6 text-center shadow-md border border-gold-light">
-                <div class="bg-gold text-navy w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
-                    </svg>
-                </div>
-                <h4 class="font-bold text-navy mb-2">Guesthouses</h4>
-                <p class="text-gray-600 text-sm">Family-run establishments</p>
-            </div>
 
-            <!-- Hotels -->
-            <div class="bg-white rounded-xl p-6 text-center shadow-md border border-gold-light">
-                <div class="bg-gold text-navy w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                    </svg>
-                </div>
-                <h4 class="font-bold text-navy mb-2">Hotels</h4>
-                <p class="text-gray-600 text-sm">All star ratings</p>
-            </div>
+<!-- Story 01 Visual -->
+<section class="relative h-screen w-full overflow-hidden">
+    <img 
+        src="assets/covid.jpeg"
+        alt="Inside a long-distance bus during COVID-19 curfew, dim lights, masked passengers, quiet uncertainty"
+        class="absolute inset-0 w-full h-full object-cover"
+    >
 
-            <!-- B&Bs -->
-            <div class="bg-white rounded-xl p-6 text-center shadow-md border border-gold-light">
-                <div class="bg-gold text-navy w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9m0 9c-5 0-9-4-9-9s4-9 9-9"/>
-                    </svg>
-                </div>
-                <h4 class="font-bold text-navy mb-2">B&Bs</h4>
-                <p class="text-gray-600 text-sm">Bed & Breakfasts</p>
-            </div>
+    <!-- Dark emotional overlay -->
+    <div class="absolute inset-0 bg-black/40"></div>
 
-            <!-- Lodges -->
-            <div class="bg-white rounded-xl p-6 text-center shadow-md border border-gold-light">
-                <div class="bg-gold text-navy w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                    </svg>
-                </div>
-                <h4 class="font-bold text-navy mb-2">Lodges</h4>
-                <p class="text-gray-600 text-sm">Vacation & Safari</p>
-            </div>
-        </div>
-
-        <!-- Supporting Text - Clean & Professional -->
-        <!-- Supporting Text - Original Layout -->
-        <div class="mt-12 text-center max-w-3xl mx-auto">
-            <p class="text-gray-600 italic border-l-4 border-gold pl-4 py-2 bg-white rounded-r-lg">
-                "<span class="text-gold font-semibold">Safina MIS</span> serves accommodation owners who value 
-                <span class="font-semibold text-navy">integrity and efficiency</span> above all else. 
-                For those ready to <span class="text-gold font-medium">grow beyond daily operations</span> 
-                and build a business that works for them... 
-                <span class="text-gold">Safina MIS</span> might be worth exploring."
-            </p>
-        </div>
-
+    <!-- Caption -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center px-6">
+        <p class="text-sm md:text-base text-gray-200 italic max-w-xl">
+            Movement without certainty — a feeling many remember.
+        </p>
     </div>
 </section>
 
-<!-- Video Demo Section - ADD BEFORE THE CURRENT DEMO SECTION -->
-<section class="py-20 bg-gray-50">
+<!-- Story Section 02 – Balanced Split Layout -->
+<section id="story2" class="py-24 bg-[#001F3F]/10">
+  <div class="container mx-auto px-6">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 lg:gap-20 items-center">
+
+      <!-- Story Text -->
+      <div class="max-w-xl">
+        <span class="inline-block text-gold font-semibold tracking-widest uppercase text-sm mb-5">
+          STORY 02
+        </span>
+
+        <h2 class="text-4xl md:text-5xl font-extrabold text-navy leading-tight mb-6">
+          We Were Just
+          <br />
+          Trying to Help
+        </h2>
+
+        <div class="space-y-5 text-base md:text-lg text-gray-700 leading-relaxed">
+          <p>
+            During my four years at university, my friend’s uncle asked us to build a simple
+            Room and Stock Management system for his business, Shalom.
+          </p>
+
+          <p>
+            At the time, we didn’t know we were building anything big.
+            <span class="font-semibold text-navy">We were just trying to help.</span>
+          </p>
+
+          <p>
+            Over time, the Room Management part grew. Every improvement followed one principle:
+            <span class="font-semibold text-navy">solve real problems for real people</span>.
+          </p>
+
+          <p class="text-lg md:text-xl font-medium text-navy pt-2">
+            What began as a small university project slowly became
+            <span class="text-gold font-bold">Safina MIS</span>.
+          </p>
+        </div>
+      </div>
+
+      <!-- Image Panel -->
+      <div class="relative w-full h-full max-h-[420px] md:max-h-[460px] rounded-2xl overflow-hidden shadow-xl">
+        <img
+          src="assets/friend.jpeg"
+          alt="Two university students working together"
+          class="w-full h-full object-cover"
+        />
+        <!-- Soft overlay for harmony -->
+        <div class="absolute inset-0 bg-black/10"></div>
+      </div>
+
+    </div>
+
+    <!-- Caption -->
+    <p class="mt-10 text-sm text-gray-500 italic text-center max-w-3xl mx-auto">
+      Building something useful, long before we knew it would matter.
+    </p>
+  </div>
+</section>
+
+
+<!-- Video Proof Section -->
+<!-- Video Proof Section -->
+<section id="how-it-works" class="py-20 bg-gray-50">
     <div class="container mx-auto px-6">
+        <!-- Header: Calm, outcome-focused -->
         <div class="text-center max-w-3xl mx-auto mb-12">
-            <h2 class="text-4xl font-bold text-navy mb-4">See How Safina MIS Works in 80 Seconds</h2>
-            <p class="text-xl text-gray-600">Watch the complete booking-to-check-in flow that's transforming Kenyan accommodations</p>
+            <h2 class="text-4xl font-bold text-navy mb-4">
+                From a Room Management Module to a Full Ecosystem
+            </h2>
+            <p class="text-xl text-gray-600">
+                What began as a simple room management module grew into the Safina MIS ecosystem —
+                multiple parts working together to ensure travelers know where they’ll sleep
+                <span class="font-medium text-navy">before they arrive</span>.
+                Today, it brings clarity and calm to both travelers and accommodation owners across Kenya.
+                See how it works in the short video below.
+            </p>
         </div>
 
         <div class="max-w-4xl mx-auto">
             <!-- Video Container -->
             <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gold/20">
                 <div class="aspect-w-16 aspect-h-9 bg-gray-900">
-                    <!-- Replace with your actual video -->
                     <video 
                         class="w-full h-full object-cover"
                         controls
-                        poster="assets/video-poster.jpg" <!-- Add a poster frame -->
+                        poster="assets/video-poster.jpg"
                         preload="metadata"
+                        aria-label="Short walkthrough showing how Safina MIS prevents late-night accommodation uncertainty"
                     >
                         <source src="assets/safinamistutorial.mp4" type="video/mp4">
                         <source src="assets/safina-reservation-flow.webm" type="video/webm">
@@ -457,28 +243,28 @@
                     </video>
                 </div>
                 
-                <!-- Video Chapters/Timeline -->
+                <!-- Video Timeline / Human Outcomes -->
                 <div class="p-6 bg-gradient-to-r from-navy/5 to-gold/5">
                     <div class="grid grid-cols-4 gap-4 text-center">
                         <div class="text-sm">
                             <div class="w-3 h-3 bg-gold rounded-full mx-auto mb-2"></div>
                             <span class="text-navy font-medium">0:15</span>
-                            <p class="text-gray-600 text-xs">Guest Booking</p>
+                            <p class="text-gray-600 text-xs">Traveler finds a room</p>
                         </div>
                         <div class="text-sm">
                             <div class="w-3 h-3 bg-gold rounded-full mx-auto mb-2"></div>
                             <span class="text-navy font-medium">0:30</span>
-                            <p class="text-gray-600 text-xs">M-Pesa Payment</p>
+                            <p class="text-gray-600 text-xs">Payment confirms instantly</p>
                         </div>
                         <div class="text-sm">
                             <div class="w-3 h-3 bg-gold rounded-full mx-auto mb-2"></div>
                             <span class="text-navy font-medium">0:45</span>
-                            <p class="text-gray-600 text-xs">Auto Check-in</p>
+                            <p class="text-gray-600 text-xs">Arrival is expected</p>
                         </div>
                         <div class="text-sm">
                             <div class="w-3 h-3 bg-gold rounded-full mx-auto mb-2"></div>
                             <span class="text-navy font-bold">1:00</span>
-                            <p class="text-gray-600 text-xs">Revenue Report</p>
+                            <p class="text-gray-600 text-xs">Owner sees clarity</p>
                         </div>
                     </div>
                 </div>
@@ -492,191 +278,300 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
                     </div>
-                    <h4 class="font-bold text-navy mb-2">No Manual Entry</h4>
-                    <p class="text-gray-600 text-sm">Bookings flow automatically from website to system</p>
+                    <h4 class="font-bold text-navy mb-2">No Guesswork</h4>
+                    <p class="text-gray-600 text-sm">
+                        Guests know where they’re going before they travel.
+                    </p>
                 </div>
+
                 <div class="text-center p-4">
                     <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
                         <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2"/>
                         </svg>
                     </div>
-                    <h4 class="font-bold text-navy mb-2">Instant M-Pesa Sync</h4>
-                    <p class="text-gray-600 text-sm">Payments automatically update reservations</p>
+                    <h4 class="font-bold text-navy mb-2">One Source of Truth</h4>
+                    <p class="text-gray-600 text-sm">
+                        Payments, rooms, and arrivals stay in sync automatically.
+                    </p>
                 </div>
+
                 <div class="text-center p-4">
                     <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
                         <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5"/>
                         </svg>
                     </div>
-                    <h4 class="font-bold text-navy mb-2">Live Reports</h4>
-                    <p class="text-gray-600 text-sm">See revenue and occupancy in real-time</p>
+                    <h4 class="font-bold text-navy mb-2">Calm for Owners</h4>
+                    <p class="text-gray-600 text-sm">
+                        See what’s happening — without being on site.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Demo Section -->
+<!-- Interactive Demo Section -->
 <section id="demo" class="py-20 bg-white">
     <div class="container mx-auto px-6">
+
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-4xl font-bold text-navy mb-4">
+                See It for Yourself
+            </h2>
+            <p class="text-xl text-gray-600">
+                Experience how Safina MIS keeps rooms, payments, and operations
+                working together — calmly and clearly.
+            </p>
+        </div>
+
         <div class="max-w-4xl mx-auto card-elegant overflow-hidden">
             <div class="md:flex">
+
+                <!-- Left: Demo Access Info -->
                 <div class="md:w-1/2 bg-gradient-to-br from-navy to-navy-light p-10 text-white">
-                    <h2 class="text-3xl font-bold mb-6">See Safina MIS in Action for Accommodation Management</h2> <!-- REVISED: Added specificity -->
-                    <p class="mb-8 text-gray-200">Experience how our system can transform your accommodation operations with this interactive demo.</p> <!-- REVISED: "accommodation operations" -->
+                    <h3 class="text-3xl font-bold mb-6">
+                        Try Safina MIS
+                    </h3>
+                    <p class="mb-8 text-gray-200">
+                        Explore an interactive demo and see firsthand how the system
+                        keeps rooms, payments, and daily operations in sync.
+                    </p>
+
                     <div class="space-y-4">
                         <div class="flex items-center">
                             <svg class="w-5 h-5 mr-3 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/>
                             </svg>
-                            <span class="font-medium">safina.kweliai.com</span>
+                            <span class="font-medium">Website: safina.kweliai.com</span>
                         </div>
+
                         <div class="flex items-center">
                             <svg class="w-5 h-5 mr-3 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                             </svg>
                             <span class="font-medium">Username: Demo</span>
                         </div>
+
                         <div class="flex items-center">
                             <svg class="w-5 h-5 mr-3 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
                             </svg>
                             <span class="font-medium">Password: Demo@123</span>
                         </div>
                     </div>
                 </div>
+
+                <!-- Right: What They’ll Discover -->
                 <div class="md:w-1/2 p-10">
-                    <h3 class="text-2xl font-bold mb-6 text-navy">What You'll Discover</h3>
+                    <h4 class="text-2xl font-bold mb-6 text-navy">
+                        What You’ll Discover
+                    </h4>
+
                     <ul class="space-y-4">
                         <li class="flex items-start">
                             <svg class="w-5 h-5 text-green-500 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                             </svg>
                             <div>
-                                <strong>Smart Guest Management:</strong> Handle walk-ins, future bookings, and automated check-ins/outs seamlessly
+                                <strong>Smart Guest Management:</strong>
+                                Handle walk-ins, future bookings, and automated check-ins and check-outs.
                             </div>
                         </li>
+
                         <li class="flex items-start">
                             <svg class="w-5 h-5 text-green-500 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                             </svg>
                             <div>
-                                <strong>Automated Financial Control:</strong> Instant digital receipts, room billing, and comprehensive reporting
+                                <strong>Automated Financial Control:</strong>
+                                Instant digital receipts, billing, and live reports.
                             </div>
                         </li>
+
                         <li class="flex items-start">
                             <svg class="w-5 h-5 text-green-500 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                             </svg>
                             <div>
-                                <strong>Real-Time Business Intelligence:</strong> Live room inventory tracking and performance analytics
+                                <strong>Live Business Insights:</strong>
+                                Track occupancy, revenue, and room availability in real time.
                             </div>
                         </li>
+
                         <li class="flex items-start">
                             <svg class="w-5 h-5 text-green-500 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                             </svg>
                             <div>
-                                <strong>Secure Role-Based Access:</strong> Control staff permissions while maintaining full oversight
+                                <strong>Secure Role-Based Access:</strong>
+                                Control staff permissions while keeping full oversight.
                             </div>
                         </li>
                     </ul>
-                    <a href="http://safina.kweliai.com" target="_blank" class="btn-gold mt-8 inline-block px-8 py-3 rounded-lg font-bold">Launch Demo Now</a>
+
+                    <a href="http://safina.kweliai.com" target="_blank"
+                        class="btn-gold mt-8 inline-block px-8 py-3 rounded-lg font-bold">
+                        Launch the Demo
+                    </a>
                 </div>
+
             </div>
-        </div>
-    </div>
-</section>   <!-- Health Check CTA - WITH PROGRESS BAR -->
-<section id="health-check" class="py-20 bg-gray-50">
-    <div class="container mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold mb-4 text-navy">Free Accommodation Operations Assessment</h2>
-        <p class="text-xl mb-10 max-w-2xl mx-auto text-gray-600">Get our expert analysis of your current accommodation systems and receive personalized recommendations to boost efficiency</p> <!-- REVISED: "accommodation systems" -->
-        <div class="max-w-md mx-auto card-elegant p-8">
-            <form 
-                action="https://formspree.io/f/xrbobgaj" 
-                method="POST"
-                class="space-y-4"
-                id="health-check-form"
-            >
-                <input 
-                    type="text" 
-                    name="name" 
-                    placeholder="Your Name" 
-                    class="input-elegant w-full" 
-                    required
-                    id="name-input"
-                >
-                <input 
-                    type="email" 
-                    name="email" 
-                    placeholder="Email Address" 
-                    class="input-elegant w-full" 
-                    required
-                    id="email-input"
-                >
-                <input 
-                    type="tel" 
-                    name="phone" 
-                    placeholder="Phone Number" 
-                    class="input-elegant w-full"
-                    id="phone-input"
-                >
-                <input 
-                    type="hidden" 
-                    name="_subject" 
-                    value="New Health Check Request - Safina MIS"
-                >
-                
-                <!-- Progress Bar Container -->
-                <div class="progress-container hidden mt-2">
-                    <div class="bg-gray-200 rounded-full h-2">
-                        <div class="bg-gold h-2 rounded-full progress-bar" style="width: 0%"></div>
-                    </div>
-                    <p class="text-xs text-gray-600 mt-1 progress-text">Sending your request...</p>
-                </div>
-                
-                <button 
-                    type="submit" 
-                    class="btn-navy w-full px-6 py-3 rounded-lg font-bold transition-all duration-300 relative overflow-hidden"
-                    id="submit-button"
-                >
-                    <span class="button-text">Get My Free Assessment</span>
-                    <div class="loading-spinner absolute inset-0 flex items-center justify-center hidden">
-                        <svg class="animate-spin h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
-                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                    </div>
-                </button>
-            </form>
-            <p class="text-gray-500 text-sm mt-4">No obligation • 100% Free • Personalized Report</p>
         </div>
     </div>
 </section>
 
-<!-- Final CTA -->
-<section class="py-20 bg-gradient-to-r from-navy to-navy-light text-white">
+
+<!-- Partnership + Visual Impact Section -->
+<section id="partnership" class="py-24 bg-gray-50 relative overflow-hidden">
+    <div class="container mx-auto px-6 text-center">
+        <!-- Section Header -->
+        <h2 class="text-4xl font-bold text-navy mb-6">
+            Join Us in Transforming Accommodation Across Kenya
+        </h2>
+        <p class="text-gray-600 max-w-3xl mx-auto mb-12 text-lg">
+            This dream cannot happen alone. We’re looking for forward-thinking accommodation owners in 
+            <span class="font-semibold">Guesthouses, Hotels, B&Bs, and Lodges</span> to partner with us — 
+            to bring clarity, calm, and growth to every guest experience.
+        </p>
+
+        <!-- Hero Videos / Demonstration -->
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
+            <!-- Guest Video -->
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
+                <video class="w-full h-full object-cover" autoplay loop muted playsinline>
+                    <source src="assets/happpy family guests.mp4" type="video/mp4">
+                </video>
+                <div class="absolute bottom-0 left-0 right-0 bg-black/50 text-center py-3">
+                    <h3 class="text-gold font-bold mb-1">For Guests</h3>
+                    <p class="text-xs text-gray-300">Book Instantly • Anywhere, Anytime</p>
+                </div>
+            </div>
+
+            <!-- Reception Video -->
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
+                <video class="w-full h-full object-cover" autoplay loop muted playsinline>
+                    <source src="assets/receptionist.mp4" type="video/mp4">
+                </video>
+                <div class="absolute bottom-0 left-0 right-0 bg-black/50 text-center py-3">
+                    <h3 class="text-green-400 font-bold mb-1">For Reception</h3>
+                    <p class="text-xs text-gray-300">Professional Service • More Confidence • Less Stress</p>
+                </div>
+            </div>
+
+            <!-- Manager Video -->
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
+                <video class="w-full h-full object-cover" autoplay loop muted playsinline>
+                    <source src="assets/manager.mp4" type="video/mp4">
+                </video>
+                <div class="absolute bottom-0 left-0 right-0 bg-black/50 text-center py-3">
+                    <h3 class="text-blue-400 font-bold mb-1">For Managers</h3>
+                    <p class="text-xs text-gray-300">Total Freedom • Auto-Revenue • Peace of Mind</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Button -->
+        <button 
+            data-open="partnerModal"
+            class="inline-block bg-yellow-400 text-[#011c3a] px-10 py-4 rounded-lg font-bold 
+                    hover:bg-yellow-300 transition transform hover:scale-105 shadow-lg mt-10">
+            Partner With Us
+        </button>
+
+    </div>
+</section>
+
+<!-- Ecosystem Section -->
+<section class="py-20 bg-white">
+  <div class="container mx-auto px-6">
+
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <h3 class="text-2xl md:text-3xl font-bold text-navy mb-4">
+        Powered By Real Partners
+      </h3>
+      <p class="text-lg text-gray-600">
+        Safina MIS is built within real systems — financial, operational, and human.
+      </p>
+    </div>
+
+    <!-- Logos -->
+    <div 
+      id="ecosystem-logos"
+      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 
+             gap-10 items-center justify-center max-w-6xl mx-auto text-center"
+    >
+
+      <!-- Kakamega Guest House -->
+      <div class="flex flex-col items-center">
+        <img src="assets/kgh2.jpg" alt="Kakamega Guest House" class="max-h-20 mx-auto hover:scale-110 transition-transform duration-300">
+        <span class="mt-2 text-gray-700 font-medium text-sm">Kakamega Guest House</span>
+      </div>
+
+      <!-- Moha Computers -->
+      <div class="flex flex-col items-center">
+        <img src="assets/moha2.jpg" alt="Moha Computers" class="max-h-20 mx-auto hover:scale-110 transition-transform duration-300">
+        <span class="mt-2 text-gray-700 font-medium text-sm">Mohaa Computers</span>
+      </div>
+
+      <!-- Prolific VA -->
+      <div class="flex flex-col items-center">
+        <img src="assets/pva.png" alt="Prolific VA" class="max-h-20 mx-auto hover:scale-110 transition-transform duration-300">
+        <span class="mt-2 text-gray-700 font-medium text-sm">Prolific VA</span>
+      </div>
+
+      <!-- M-Pesa -->
+      <div class="flex flex-col items-center">
+        <img src="assets/mpesa.png" alt="M-Pesa" class="max-h-14 mx-auto hover:scale-110 transition-transform duration-300">
+        <span class="mt-2 text-gray-700 font-medium text-sm">M-Pesa</span>
+      </div>
+
+      <!-- Bank -->
+      <div class="flex flex-col items-center">
+        <img src="assets/kcb.png" alt="Bank Partner" class="max-h-14 mx-auto hover:scale-110 transition-transform duration-300">
+        <span class="mt-2 text-gray-700 font-medium text-sm">KCB Bank</span>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Final CTA - Story Invitation -->
+<!-- Final CTA - Story Invitation -->
+<section id="cta-section" class="py-20 bg-gradient-to-r from-navy to-navy-light text-white">
   <div class="container mx-auto px-6 text-center">
-    <h2 class="text-3xl font-bold mb-6">Ready to Transform Your Accommodation Business?</h2>
+    <h2 class="text-3xl font-bold mb-6">Be Part of the Next Chapter in Our Story</h2>
     <p class="text-xl mb-8 max-w-2xl mx-auto">
-      Stop losing money to manual errors and start enjoying the freedom of automated, accurate accommodation operations.
+      Your accommodation business deserves a future without errors, delays, or missed opportunities. 
+      Join us and see how Safina MIS can guide your journey toward seamless operations.
     </p>
     <div class="flex flex-col md:flex-row justify-center gap-4">
-      <a href="#demo" class="btn-gold px-8 py-4 rounded-lg font-bold">Try Demo Now</a>
-      
-      <!-- 🔹 Replaced old button with modal trigger -->
+      <!-- Calendly popup trigger button -->
+      <!-- Example for Main CTA button -->
       <button 
-        data-open="pricingModal" 
-        class="px-8 py-4 rounded-lg font-bold border-2 border-gold text-gold hover:bg-gold hover:text-navy transition"
-        style="background: transparent;"
-      >
-        Get Started
+        data-open="calendlyModal"
+        class="px-8 py-4 rounded-lg font-bold border-2 border-gold text-gold
+                pulse-gold hover:bg-gold hover:text-navy hover:scale-105
+                transition-all duration-300">
+        Schedule a Meeting
       </button>
+
     </div>
   </div>
 </section>
+
 
 
 <custom-footer></custom-footer>   <!-- Scripts -->
@@ -697,8 +592,6 @@
         }
     }, 1000);
 </script>
-<!-- other scripts if any -->
-<script src="js/splash.js"></script>
 
 <style>
   @keyframes spin {
@@ -829,6 +722,100 @@
   }
 </style>
 
+<div class="modal" id="partnerModal">
+  <div class="modal-backdrop modal-close"></div>
+
+  <div class="modal-content">
+    <div class="modal-header">
+      Partner With Safina MIS
+      <button class="modal-close">&times;</button>
+    </div>
+
+    <div class="modal-body">
+      <form 
+        id="partnerForm"
+        action="https://formspree.io/f/xkoowwva"
+        method="POST"
+      >
+
+        <!-- Company -->
+        <input 
+          type="text" 
+          name="company_name" 
+          placeholder="Company / Property Name" 
+          required
+        />
+
+        <!-- Person -->
+        <input 
+          type="text" 
+          name="contact_person" 
+          placeholder="Your Full Name" 
+          required
+        />
+
+        <!-- Contact -->
+        <input 
+          type="tel" 
+          name="phone" 
+          placeholder="Phone Number" 
+          required
+        />
+
+        <input 
+          type="email" 
+          name="email" 
+          placeholder="Email Address (optional)"
+        />
+
+        <!-- Existing System -->
+        <select name="existing_system" required>
+          <option value="">Do you currently use any system?</option>
+          <option value="none">No system yet</option>
+          <option value="manual">Manual (books / Excel)</option>
+          <option value="software">Yes — another software</option>
+        </select>
+
+        <!-- Website -->
+        <select name="website_status" required>
+          <option value="">Do you have a website?</option>
+          <option value="no">No website</option>
+          <option value="basic">Yes — basic website with manual reservation</option>
+          <option value="booking">Yes — with online booking</option>
+        </select>
+
+        <!-- Notes -->
+        <input 
+          type="text" 
+          name="notes" 
+          placeholder="Anything you'd like us to know? (optional)"
+        />
+
+        <!-- Progress -->
+        <div class="progress-bar" id="partnerProgress"></div>
+
+        <div class="form-status" id="partnerStatus">
+          <span class="status-text">Sending...</span>
+          <div class="spinner"></div>
+        </div>
+
+        <button type="submit" class="cta-button">
+          Request Partnership
+        </button>
+      </form>
+
+      <div class="form-success" id="partnerSuccess" style="display:none;">
+        <h3>✅ Request received</h3>
+        <p>
+          Thank you. We’ll review your details and reach out to arrange
+          a visit or meeting.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <div class="modal" id="pricingModal">
   <div class="modal-backdrop modal-close"></div>
   <div class="modal-content">
@@ -857,74 +844,453 @@
 
         <button type="submit" class="cta-button">Send Request</button>
       </form>
+    </div>
+  </div>
+</div>
 
-      <div id="formSuccess" class="form-success" style="display:none;">
-        <h3>✅ Thank you!</h3>
-        <p>We’ve received your request and will reach out shortly.</p>
-      </div>
+<div class="modal" id="calendlyModal">
+  <div class="modal-backdrop modal-close"></div>
+
+  <div class="modal-content" style="max-width: 900px; height: 80vh;">
+    <div class="modal-header">
+      Schedule a Meeting with Safina MIS
+      <button class="modal-close">&times;</button>
+    </div>
+
+    <div class="modal-body" style="padding:0; height: calc(80vh - 60px);">
+      <iframe
+        src="https://calendly.com/prolificva-services/30-min-meet-with-safina-mis-team"
+        style="width:100%; height:100%; border:0;"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
   </div>
 </div>
 
 <script>
-  const form = document.getElementById("pricingForm");
-  const statusDiv = document.getElementById("formStatus");
-  const successDiv = document.getElementById("formSuccess");
-  const statusText = statusDiv.querySelector(".status-text");
-  const progressBar = document.getElementById("progressBar");
+// Shared Toast Function
+function showToast() {
+    const toast = document.getElementById('global-toast');
+    toast.classList.add('show');
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 5000); // Auto-hide after 5 seconds
+}
 
-  document.querySelectorAll("[data-open='pricingModal']").forEach(btn => {
-    btn.addEventListener("click", () => {
-      document.getElementById("pricingModal").classList.add("active");
-    });
-  });
+// Close button
+document.querySelector('#global-toast .toast-close')?.addEventListener('click', () => {
+    document.getElementById('global-toast').classList.remove('show');
+});
 
-  document.querySelectorAll(".modal-close, .modal-backdrop").forEach(el => {
-    el.addEventListener("click", () => {
-      document.getElementById("pricingModal").classList.remove("active");
-    });
-  });
+// Pricing Modal Form
+const pricingForm = document.getElementById("pricingForm");
+const pricingProgress = document.getElementById("progressBar");
 
-  form.addEventListener("submit", async (e) => {
+pricingForm.addEventListener("submit", async (e) => {
     e.preventDefault();
-    statusDiv.style.display = "block";
-    successDiv.style.display = "none";
-    statusText.textContent = "Sending...";
-    progressBar.style.width = "30%";
+    pricingProgress.style.width = "30%";
 
-    const formData = new FormData(form);
+    const formData = new FormData(pricingForm);
     try {
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      });
+        const response = await fetch(pricingForm.action, {
+            method: pricingForm.method,
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        });
 
-      progressBar.style.width = "80%";
+        pricingProgress.style.width = "100%";
 
-      if (response.ok) {
-        progressBar.style.width = "100%";
-        form.reset();
-        setTimeout(() => {
-          statusDiv.style.display = "none";
-          successDiv.style.display = "block";
-        }, 500);
-        setTimeout(() => {
-          document.getElementById("pricingModal").classList.remove("active");
-          successDiv.style.display = "none";
-          progressBar.style.width = "0";
-        }, 2500);
-      } else {
-        throw new Error("Form submission failed");
-      }
+        if (response.ok) {
+            pricingForm.reset();
+            showToast();
+            setTimeout(() => {
+                document.getElementById("pricingModal").classList.remove("active");
+                pricingProgress.style.width = "0";
+            }, 800);
+        } else {
+            throw new Error("Submission failed");
+        }
     } catch (error) {
-      statusText.textContent = "⚠️ Error sending form. Please try again.";
-      progressBar.style.width = "0";
+        alert("⚠️ Something went wrong. Please try again.");
+        pricingProgress.style.width = "0";
     }
+});
+
+// Partner Modal Form
+const partnerForm = document.getElementById("partnerForm");
+const partnerProgress = document.getElementById("partnerProgress");
+
+partnerForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    partnerProgress.style.width = "30%";
+
+    const formData = new FormData(partnerForm);
+    try {
+        const response = await fetch(partnerForm.action, {
+            method: partnerForm.method,
+            body: formData,
+            headers: { Accept: "application/json" }
+        });
+
+        partnerProgress.style.width = "100%";
+
+        if (response.ok) {
+            partnerForm.reset();
+            showToast();
+            setTimeout(() => {
+                document.getElementById("partnerModal").classList.remove("active");
+                partnerProgress.style.width = "0";
+            }, 800);
+        } else {
+            throw new Error("Submission failed");
+        }
+    } catch (err) {
+        alert("⚠️ Something went wrong. Please try again.");
+        partnerProgress.style.width = "0";
+    }
+});
+</script>
+
+<!-- Global Toast Notification -->
+<div id="global-toast" class="toast-notification">
+    <div class="toast-content">
+        <span class="toast-icon">✅</span>
+        <div class="toast-message">
+            <strong>Request Received!</strong>
+            <p>We’ll reach out to you shortly.</p>
+        </div>
+        <button class="toast-close">&times;</button>
+    </div>
+</div>
+
+<script>
+// Open ANY modal with data-open attribute (works for partnerModal & pricingModal)
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('[data-open]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const modalId = btn.getAttribute('data-open');
+            const modal = document.getElementById(modalId);
+            if (modal) modal.classList.add('active');
+        });
+    });
+
+    // Close modals (backdrop or X button)
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('modal-close') || e.target.classList.contains('modal-backdrop')) {
+            e.target.closest('.modal').classList.remove('active');
+        }
+    });
+
+    // Escape key closes modals
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') document.querySelectorAll('.modal.active').forEach(m => m.classList.remove('active'));
+    });
+});
+</script>
+
+<!-- Calendly popup widget script (required for popup) -->
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+
+<!-- GSAP (only once) + Hero Sunrise Entrance Animation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Enhanced Hero "Sunrise" Animation
+    // More intentional, more emotional pacing
+    
+    // Set initial states with more nuance
+    gsap.set(".hero", {
+      opacity: 1 // Ensure hero container is visible
+    });
+    
+    gsap.set(".hero-headline", {
+      opacity: 0,
+      scale: 0.94,
+      filter: "blur(8px)" // Slight blur for "dreamlike" start
+    });
+
+    gsap.set(".hero-subtext", {
+      opacity: 0,
+      x: -30,
+      filter: "blur(4px)"
+    });
+
+    gsap.set(".hero-cta", {
+      opacity: 0,
+      y: 30,
+      scale: 0.95
+    });
+
+    // Create a master timeline with more emotional pacing
+    const heroTL = gsap.timeline({
+      defaults: { 
+        ease: "expo.out", // Smoother, more natural than power3
+        overwrite: "auto"
+      },
+      delay: 0.3 // Tiny delay for page to settle
+    });
+
+    heroTL
+      // PHASE 1: THE DAWN (Headline appears like first light)
+      .to(".hero-headline", {
+        opacity: 1,
+        scale: 1,
+        filter: "blur(0px)",
+        duration: 2.2, // Slower for gravitas
+        ease: "power2.inOut" // Gentle acceleration then deceleration
+      }, "dawn")
+
+      // PHASE 2: THE MORNING LIGHT (Subtext clarifies meaning)
+      .to(".hero-subtext", {
+        opacity: 1,
+        x: 0,
+        filter: "blur(0px)",
+        duration: 1.8,
+        ease: "power2.out"
+      }, "dawn+=0.8") // Starts 0.8s after headline begins
+
+      // PHASE 3: THE INVITATION (CTA emerges naturally)
+      .to(".hero-cta", {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 1.4,
+        ease: "back.out(1.6)" // Even gentler overshoot
+      }, "dawn+=1.6")
+
+      // Add a subtle background brightness shift for depth
+      .fromTo(".hero .bg-black\\/15", {
+        opacity: 0.2
+      }, {
+        opacity: 0.15,
+        duration: 3,
+        ease: "none"
+      }, "dawn")
+      
+      // Add a very slight vignette fade for focus
+      .fromTo(".hero .bg-radial-vignette", {
+        opacity: 0.5
+      }, {
+        opacity: 0.7,
+        duration: 2.5,
+        ease: "sine.inOut"
+      }, "dawn");
+
+    // Add micro-interactions for extra polish
+    const ctaButton = document.querySelector(".hero-cta .btn-gold");
+    if (ctaButton) {
+      // Hover effect
+      ctaButton.addEventListener("mouseenter", () => {
+        gsap.to(ctaButton, {
+          scale: 1.05,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      });
+      
+      ctaButton.addEventListener("mouseleave", () => {
+        gsap.to(ctaButton, {
+          scale: 1,
+          duration: 0.4,
+          ease: "elastic.out(1, 0.5)"
+        });
+      });
+    }
+
+    // Optional: Add scroll hint animation (more elegant)
+    const scrollHint = document.querySelector(".absolute.bottom-8");
+    if (scrollHint) {
+      gsap.to(scrollHint, {
+        y: -10,
+        duration: 1.5,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+        delay: 3 // Wait for hero animation to complete
+      });
+    }
+
+    // Optional: Parallax effect on background for depth
+    gsap.to(".hero .absolute.inset-0.z-0", {
+      y: "10%",
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        end: "bottom top",
+        scrub: 1.2
+      }
+    });
+
+    console.log("✨ Hero animation enhanced with emotional pacing");
   });
+</script>
+<!-- Add this after your existing hero animation script -->
+<script>
+  // ============================================
+  // Story Section 01 - "Opening a Book" Animation
+  // ============================================
+  
+  document.addEventListener("DOMContentLoaded", () => {
+    // Wait a moment for the page to settle
+    setTimeout(() => {
+      initStoryAnimation();
+    }, 100);
+  });
+
+  function initStoryAnimation() {
+    // First, set initial states for all elements in story section
+    gsap.set("#story1 span", { opacity: 0, y: 10 }); // "Story 01" label
+    gsap.set("#story1 h2", { opacity: 0, y: 15 }); // Title
+    gsap.set("#story1 .space-y-7 p", { opacity: 0, y: 8 }); // First two paragraphs
+    gsap.set("#story1 blockquote", { opacity: 0, scale: 0.98 }); // The question
+    gsap.set("#story1 .space-y-6 p", { opacity: 0, y: 8 }); // Resolution paragraphs
+
+    // Create a ScrollTrigger timeline for the entire story section
+    const storyTL = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#story1",
+        start: "top 80%", // When top of section is 80% down from top of viewport
+        end: "bottom 20%", // When bottom of section is 20% up from bottom
+        scrub: 1.2, // Smooth scrubbing for that "reading pace" feel
+        markers: false, // Set to true for debugging, false for production
+        toggleActions: "play none none reverse" // Play forward, reverse on scroll back
+      },
+      defaults: { 
+        ease: "sine.out", // Gentle, natural easing - no bounces
+        duration: 1.2 // Deliberate pace
+      }
+    });
+
+    // Sequence the animations in reading order
+    storyTL
+      // 1. "Story 01" label appears first - like a chapter marker
+      .to("#story1 span", { 
+        opacity: 1, 
+        y: 0, 
+        duration: 0.8 
+      }, 0)
+      
+      // 2. Title follows gently - as the page settles
+      .to("#story1 h2", { 
+        opacity: 1, 
+        y: 0, 
+        duration: 1.2 
+      }, 0.4)
+      
+      // 3. First paragraph - like reading line by line
+      .to("#story1 .space-y-7 p:nth-child(1)", { 
+        opacity: 1, 
+        y: 0, 
+        duration: 1 
+      }, 0.8)
+      
+      // 4. Second paragraph with slight pause
+      .to("#story1 .space-y-7 p:nth-child(2)", { 
+        opacity: 1, 
+        y: 0, 
+        duration: 1 
+      }, 1.4)
+      
+      // 5. The quoted question - arrives last, slower, for reflection
+      .to("#story1 blockquote", { 
+        opacity: 1, 
+        scale: 1, 
+        duration: 1.6 // Slower for emphasis
+      }, 2.0)
+      
+      // 6. Resolution paragraphs - one after another
+      .to("#story1 .space-y-6 p:nth-child(1)", { 
+        opacity: 1, 
+        y: 0, 
+        duration: 1 
+      }, 2.8)
+      
+      // 7. Final paragraph with Safina MIS mention
+      .to("#story1 .space-y-6 p:nth-child(2)", { 
+        opacity: 1, 
+        y: 0, 
+        duration: 1.2 
+      }, 3.4);
+
+    // Add a very subtle fade-in for the entire section container
+    // This creates the "ink becoming noticeable" effect
+    gsap.from("#story1", {
+      scrollTrigger: {
+        trigger: "#story1",
+        start: "top 90%",
+        end: "top 70%",
+        scrub: 0.8,
+        toggleActions: "play none none reverse"
+      },
+      opacity: 0.7,
+      duration: 2.5,
+      ease: "none"
+    });
+
+    // ============================================
+    // Reusable function for other story sections
+    // ============================================
+    
+    // If you want to apply this to other sections, call:
+    // createStoryAnimation("#story2", 0.3); // 0.3 = stagger delay between elements
+  }
+
+  // Optional reusable function for other story sections
+  function createStoryAnimation(sectionId, staggerDelay = 0.3) {
+    // Find all direct children of the main content div
+    const container = document.querySelector(`${sectionId} .max-w-3xl.mx-auto`);
+    if (!container) return;
+
+    // Get all direct children except the container itself
+    const elements = container.children;
+    
+    // Set initial state for all elements
+    gsap.set(`${sectionId} .max-w-3xl.mx-auto > *`, { 
+      opacity: 0, 
+      y: 12 
+    });
+
+    // Create timeline
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionId,
+        start: "top 75%",
+        scrub: 1,
+        markers: false,
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    // Animate each element with stagger
+    tl.to(`${sectionId} .max-w-3xl.mx-auto > *`, {
+      opacity: 1,
+      y: 0,
+      stagger: staggerDelay,
+      duration: 1.4,
+      ease: "sine.out"
+    });
+
+    // Subtle section fade-in
+    gsap.from(sectionId, {
+      scrollTrigger: {
+        trigger: sectionId,
+        start: "top 85%",
+        scrub: 0.6
+      },
+      opacity: 0.6,
+      duration: 2,
+      ease: "none"
+    });
+  }
+
+  // Call this for Story Section 02 if you want the same effect:
+  // createStoryAnimation("#story2", 0.4);
 </script>
 
 </body>
 
 </html>
-
