@@ -34,7 +34,7 @@ class CustomFooter extends HTMLElement {
                             </a>
 
                             <!-- Twitter/X -->
-                            <a href="https://x.com/prolific_va" 
+                            <a href="https://x.com/prolificVA" 
                                 class="social-link" 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
