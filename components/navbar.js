@@ -23,7 +23,7 @@ class CustomNavbar extends HTMLElement {
           <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
             <li><a href="#story1" class="nav-link">Story</a></li>
             <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
-            <li><a href="#demo" class="nav-link">Proof</a></li>
+            <li><a href="#demo" class="nav-link">Demo</a></li>
             <li><a href="#partnership" class="nav-link">Join Us</a></li>
             <li>
               <!-- Revamped: Now just a smooth-scroll link to CTA section -->
@@ -49,7 +49,7 @@ class CustomNavbar extends HTMLElement {
           <div class="px-6 py-6 flex flex-col gap-4 text-gray-700 font-medium">
             <a href="#story1" class="mobile-link">Story</a>
             <a href="#how-it-works" class="mobile-link">How It Works</a>
-            <a href="#demo" class="mobile-link">Proof</a>
+            <a href="#demo" class="mobile-link">Demo</a>
             <a href="#partnership" class="mobile-link">Join Us</a>
 
             <!-- Revamped mobile: smooth-scroll link to CTA section -->
@@ -57,11 +57,6 @@ class CustomNavbar extends HTMLElement {
                class="mt-4 px-6 py-3 rounded-lg bg-gold text-navy font-semibold
                      pulse-gold hover:scale-105 transition-transform duration-300 inline-block text-center">
               Schedule a Meeting
-            </a>
-
-            <a href="http://safina.kweliai.com" target="_blank"
-               class="text-sm text-gray-500 text-center mt-4">
-              System Login →
             </a>
           </div>
         </div>
