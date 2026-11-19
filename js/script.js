@@ -173,7 +173,7 @@ class SafinaApp {
     initAnalyticsTracking() {
         // Track demo button clicks (non-navbar buttons)
         document.addEventListener('click', (e) => {
-            const demoLink = e.target.closest('[href*="safina.kweliai.com"]');
+            const demoLink = e.target.closest('#demo a[href="#cta-section"]');
             if (demoLink && !demoLink.closest('custom-navbar')) {
                 console.log('Demo accessed from:', window.location.href);
             }
